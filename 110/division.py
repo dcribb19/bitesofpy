@@ -6,11 +6,8 @@ def divide_numbers(numerator, denominator):
       However if denominator is 0 catch the corresponding exception Python
       throws (cannot divide by 0), and return 0"""
    try:
-      numerator = int(numerator)
-      denominator = int(denominator)
+      return int(numerator) / int(denominator)
    except ValueError:
       raise
-   try:
-      return numerator / denominator
    except ZeroDivisionError:
       return 0
