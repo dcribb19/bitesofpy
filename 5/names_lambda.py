@@ -7,27 +7,14 @@ NAMES = ['arnold schwarzenegger', 'alec baldwin', 'bob belderbos',
 def dedup_and_title_case_names(names):
     """Should return a list of title cased names,
        each name appears only once"""
-    title_names = []
-    for name in names:
-        name = name.title()
-        if name not in title_names:
-            title_names.append(name)
-    return title_names
+    return list(set(map(lambda name: name.title(), names)))
 
 
 def sort_by_surname_desc(names):
     """Returns names list sorted desc by surname"""
     names = dedup_and_title_case_names(names)
     # ...
-    last_names = []
-    surname_desc = []
-    for name in names:
-        last_names.append(name.split()[-1])
-    for last_name in sorted(last_names, reverse=True):
-        for name in names:
-            if name.endswith(last_name):
-                surname_desc.append(name)
-    return surname_desc
+    return sorted(names, key=lambda name: name.split()[-1], reverse=True)
 
 
 def shortest_first_name(names):
@@ -36,11 +23,4 @@ def shortest_first_name(names):
     """
     names = dedup_and_title_case_names(names)
     # ...
-    first_names = []
-    for name in names:
-        first_names.append(name.split()[0])
-    short_name = first_names[0]
-    for name in first_names:
-        if len(name) < len(short_name):
-            short_name = name
-    return short_name
+    return min(names, key=lambda name: len(name.split()[0])).split()[0]
