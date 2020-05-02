@@ -12,6 +12,3 @@ def rotate(string, n):
    if n < 0:
       d.rotate(abs(n))
       return rotate_string.join([x for x in d])
-
-print(rotate('hello', 2))
-print(rotate('hello', -2))
