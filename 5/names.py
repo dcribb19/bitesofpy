@@ -44,5 +44,3 @@ def shortest_first_name(names):
         if len(name) < len(short_name):
             short_name = name
     return short_name
-    #change
-    
