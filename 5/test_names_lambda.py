@@ -40,4 +40,3 @@ def test_shortest_first_name():
 
 def test_shortest_first_name_different_names_list():
     assert shortest_first_name(PY_CONTENT_CREATORS) == 'Dan'
-#change
