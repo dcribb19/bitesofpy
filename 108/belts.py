@@ -26,3 +26,5 @@ def get_total_points(belts=ninja_belts):
     for belt in belts.values():
        points += belt.score * belt.ninjas
     return points
+
+#change
