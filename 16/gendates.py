@@ -20,3 +20,12 @@ def gen_special_pybites_dates():
             year_date += time_delta_year
             special_pybites_dates.append(year_date)
     return special_pybites_dates
+
+"""
+MUCH EASIER
+days = 0
+while True:
+    days += 1
+    if days % 100 == 0 or days % 365 == 0:
+        yield PYBITES_BORN + timedelta(days=days)
+"""
