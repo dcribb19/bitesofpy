@@ -17,3 +17,14 @@ def enumerate_names_countries():
    for n, c in names_countries.items():
       print(str(x) + ". {:<11}".format(n) + c)
       x += 1
+   """
+   ALTERNATE SOLUTION WITH ENUMERATE
+   for i, name in enumerate(names, start=1):
+      print(str(i) + ". {:<11}".format(name) + countries[i-1])
+   enumerate(iterable, start=0) can take 2 args, so we can use 2 args in for loop to produce what we need using only 1 loop
+   
+   ADDITIONAL NOTES
+   Could have also used zip() to combine names and countries into an iterator of tuples instead of using dictionary
+
+   eg. zip_names_countries = zip(names, countries)
+   """   
