@@ -12,15 +12,7 @@ cars = {
 def get_all_jeeps(cars=cars):
     """return a comma + space (', ') separated string of jeep models
        (original order)"""
-    jeeps = ''
-    
-    for make in cars.keys():
-        if make == 'Jeep':
-            for model in cars[make]:
-                if model == cars[make][-1]:
-                    jeeps += model
-                else:
-                    jeeps += model + ", "
+    jeeps = ', '.join(cars['Jeep'])
     return jeeps
 
 
