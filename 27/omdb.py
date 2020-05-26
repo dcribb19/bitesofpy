@@ -3,7 +3,11 @@ import re
 
 def get_movie_data(files: list) -> list:
     """Parse movie json files into a list of dicts"""
-    movies = json.loads(files)
+    movies = []
+    for file in files:
+        with open(file) as json_file:
+            movie = json.load(json_file)
+            movies.append(movie)
     return movies
 
 
@@ -41,4 +45,3 @@ def get_movie_longest_runtime(movies: list) -> str:
     for movie in movies:
         if movie['Runtime'] == str(longest) + ' min':
             return movie['Title']
-            
