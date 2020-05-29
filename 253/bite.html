@@ -1,0 +1,37 @@
+<p>In <a href="https://codechalleng.es/bites/251">Bite 251</a> and <a href="https://codechalleng.es/bites/252">Bite 252</a> we looked at creating some simple <code>pandas</code> Series and then we looked at how to retrieve values and slices of values from the series. In this final bite based on Series we'll look at some options available to you to change the values of the elements in the series using some basic maths type manipulation. Then we look at creating some masks.</p>
+
+<h4>Series Maths</h4>
+
+<p>We'll start with two bites that perform some maths type manipulation to a <code>pandas</code>series.</p>
+
+<ol>
+<li>In the first part we write a function that takes a Series, a function (addition, subtraction, multiplication and division) and an integer value. The task is to apply the value and the function to each value in the series.</li>
+
+<li>In the second part, instead of applying the function to a series and an integer, the function is applied to two series.
+Hint: Keep in mind the indexes of both of the series</li>
+</ol>
+
+<h4>Series Masks</h4>
+
+<p>We'll complete this little mini path on <code>pandas</code> Series by looking at creating masks. As mentioned in the code comments don't confuse masks in this context with the <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.mask.html" target="_blank">pandas.Series.mask</a>. This is a very powerful and useful method but not what we're looking for here. For parts three and four we want a Boolean Mask: <br><i>In both NumPy and Pandas we can create masks to filter data. Masks are ’Boolean’ arrays – that is arrays of true and false values and provide a powerful and flexible method to selecting data.</i></p>
+
+<ol>
+<li>For the third part of this bite we simply need to create a mask to filter certain letters from  a series of letters. You don't need to worry about case or anything like that (anyhow changing case is changing the contents of the series so probably wouldn't want to do that).</li>
+
+<li><p>As per <a href="https://en.wikipedia.org/wiki/Quartile#Computer_Software_for_Quartiles" target="_blank">Computer Software for Quartiles</a>:
+The Excel function<code>QUARTILE(array, quart)</code> provides the desired quartile value for a given array of data. In the <em>Quartile</em> function, array is the dataset of numbers that is being analyzed and quart is any of the following 5 values depending on which quartile is being calculated e.g. <pre>
+
+| Quart |      Output QUARTILE Value       |
+| :---: | :------------------------------: |
+|   0   |          Minimum value           |
+|   1   | Lower Quartile (25th percentile) |
+|   2   |              Median              |
+|   3   | Upper Quartile (75th percentile) |
+|   4   |          Maximum value           |
+</pre></p>
+
+<p>For this part not only do we want the Median (the 50th percentile or second quartile value), we also want the mean value.
+The requirement is to take a series of <code>floats</code> and return all values in the series that are within the given range. So for this you need to create a mask on which to filter the series, apply the mask and then return the series result. </p></li>
+</ol>
+
+<p>Of course these snippets are not all as easy and straight forward as they seem. You'll need to refer to the <code>docstrings</code> and the tests to really fully understand the requirements.</p>
