@@ -1,0 +1,16 @@
+<p>Complete the <code>add</code> method of the <code>OrderedList</code> class which takes a <code>num</code> argument and adds that to the <code>self._numbers list</code> keeping it ordered upon insert.</p><p>Using a manual <code>.sort()</code> or <code>.sorted()</code> each time is not allowed. Look into the <code>bisect</code> module how to do it ...</p><p>Here is how it should works:<pre>
+order = OrderedList()
+order.add(10)
+print(order)  # __str__ already provided
+order.add(1)
+print(order)
+order.add(16)
+print(order)
+order.add(5)
+print(order)
+</pre></p><p>Output:<pre>
+10
+1, 10
+1, 10, 16
+1, 5, 10, 16
+</pre></p><p>Picking the right data structure is usually half of the battle. Good luck and keep calm and code more Python!</p>
