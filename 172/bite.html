@@ -1,0 +1,14 @@
+<p>Meet another gem in the standard library: <code>functools</code>, which contains tools for <i>functional-style programming</i>.</p><p>In this Bite you will play with its useful <code>partial()</code> function which -as per <a href="https://docs.python.org/2.5/whatsnew/pep-309.html" target="_blank">PEP 309</a>- <i>lets you construct variants of existing functions that have some of the parameters filled in</i>.</p><p>The PEP also shows <i>a small but realistic example:</i><pre>
+import functools
+
+def log (message, subsystem):
+    "Write the contents of 'message' to the specified subsystem."
+    print '%s: %s' % (subsystem, message)
+    ...
+
+server_log = functools.partial(log, subsystem='server')
+server_log('Unable to open socket')
+</pre></p><p>In this Bite you will apply this concept to the <code>round</code> builtin:<pre>
+>>> round(10.42342, 2)
+10.42
+</pre></p><p>Write two <code>partial</code>s to add the default behavior of rounding to 0 and 4 places respectively. See the template code below ...</p><p>Good luck and keep calm and code in Python!</p>
