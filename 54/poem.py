@@ -2,44 +2,24 @@ import textwrap
 
 INDENTS = 4
 
-wrapper = textwrap.TextWrapper()
-wrapper.subsequent_indent = ' ' * INDENTS
-wrapper.width=45
-
-su = """
-     To be, or not to be, that is the question:
-     Whether 'tis nobler in the mind to suffer
-
-     The slings and arrows of outrageous fortune,
-     Or to take Arms against a Sea of troubles,
-     """
-
-
-ru = """
-                      Remember me when I am gone away,
-                      Gone far away into the silent land;
-                      When you can no more hold me by the hand,
-
-                      Nor I half turn to go yet turning stay.
-
-                      Remember me when no more day by day
-                      You tell me of our future that you planned:
-                      Only remember me; you understand
-                      """
-
 
 def print_hanging_indents(poem):
     poem = textwrap.dedent(poem).strip()
+    # split into paragraphs
     paragraphs = poem.split('\n\n')
     index = 0
 
     for paragraph in paragraphs:
+        # create lines from paragraph
         lines = paragraph.splitlines()
         while index < len(lines):
+            # no indent for first line
             if index == 0:
                 print(lines[0])
                 index += 1
+            # indent all other lines
             else:
                 print(' ' * INDENTS + lines[index])
                 index += 1
+        # reset index for additional paragraphs
         index = 0
