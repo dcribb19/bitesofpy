@@ -14,14 +14,23 @@ def test_list_to_decimal(numbers, expected):
     assert list_to_decimal(numbers) == expected
 
 
-def test_list_out_of_range():
+@pytest.mark.parametrize('out', [
+    [1, 5, -5],
+    [15],
+])
+
+
+def test_list_out_of_range(out):
     with pytest.raises(ValueError):
-        list_to_decimal([1, 5, -5])
-        list_to_decimal([15])
+        list_to_decimal(out)
 
 
-def test_list_wrong_type():
+@pytest.mark.parametrize('wrong_type', [
+    [6, 2, True],
+    [3.6, 4, 1],
+    ['4', 5, 3, 1],
+])
+
+def test_list_wrong_type(wrong_type):
     with pytest.raises(TypeError):
-        list_to_decimal([6, 2, True])
-        list_to_decimal([3.6, 4, 1])
-        list_to_decimal(['4', 5, 3, 1])
+        list_to_decimal(wrong_type)
