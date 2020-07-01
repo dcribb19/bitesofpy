@@ -16,7 +16,8 @@ def test_list_to_decimal(numbers, expected):
 
 @pytest.mark.parametrize('out', [
     [1, 5, -5],
-    [15],
+    [15], 
+    [-1000, 52],
 ])
 
 
@@ -29,6 +30,9 @@ def test_list_out_of_range(out):
     [6, 2, True],
     [3.6, 4, 1],
     ['4', 5, 3, 1],
+    True,
+    5, 
+    {'type' : 'error'},
 ])
 
 def test_list_wrong_type(wrong_type):
