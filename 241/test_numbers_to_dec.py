@@ -16,7 +16,7 @@ def test_list_to_decimal(numbers, expected):
 
 @pytest.mark.parametrize('out', [
     [1, 5, -5],
-    [15], 
+    [10], 
     [-1000, 52],
 ])
 
