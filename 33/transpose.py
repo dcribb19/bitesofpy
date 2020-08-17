@@ -15,4 +15,4 @@ def transpose(data):
     """
     if isinstance(data, dict):
         data = list(data.items())
-    return [x for x in zip(*data)]
+    return zip(*data)
