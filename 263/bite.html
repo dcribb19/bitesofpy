@@ -1,0 +1,47 @@
+<p>You are tasked with counting the amount of islands in a 2D matrix / grid.</p>
+
+<p>Islands are represented by 1s, oceans by 0. If the 1s are connected either horizontally or vertically (not diagonally), then they count as one island. You can assume a grid has a limited size up to 10x10.  Try to make the search / count of number of islands as efficient as possible. If no islands are found, just return 0. </p>
+
+<p>The goal is to find how many islands there are in the ocean, regardless of its size. </p>
+
+<h3>Examples:</h3>
+<p><pre>
+###### Example 1
+
+grid = [[1, 1, 0, 0, 1],
+        [1, 1, 0, 0, 1],
+        [0, 1, 0, 0, 0],
+        [1, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0]]
+
+expected: 4 islands
+(top left island has size 5; top right = 2, bottom left = 2, bottom right = 1)
+
+
+###### Example 2
+
+grid = [[1, 0, 0, 1],
+        [1, 0, 1, 0],
+        [0, 1, 0, 0],
+        [1, 0, 0, 1]]
+
+expected: 6 islands
+(only top left one has size 2, all other islands are of size 1)
+
+
+###### Example 3
+
+empty = [[0, 0, 0, 0],
+         [0, 0, 0, 0],
+         [0, 0, 0, 0],
+         [0, 0, 0, 0]]
+
+expected = 0 islands
+</pre></p>
+
+<h3>Tasks:</h3>
+<p><ol>
+<li>Complete <code>count_islands</code> which returns the number of islands found.</li>
+<li>Complete <code>mark_islands</code> which marks all visited islands in-place (modifying the passed-in grid directly), no return value.</li>
+</ol>
+</p>
