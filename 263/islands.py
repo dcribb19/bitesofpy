@@ -29,14 +29,12 @@ def count_islands(grid):
                 if grid[y][x] == '#':
                     if grid[y][x+1] == 0:
                         islands += 1
-            # LEFT EDGE: Check right and down if not bottom.
+            # LEFT EDGE: Check down if not bottom.
             elif x == 0:
                 if grid[y][x] == '#':
-                    # Check right
-                    if grid[y][x+1] == 0:
-                        # Check down
-                        if grid[y+1][x] == 0:
-                            islands += 1
+                    # Check down
+                    if grid[y+1][x] == 0:
+                        islands += 1
             # TOP: Check left and down if not left edge.
             elif y == 0:
                 if grid[y][x] == '#':
@@ -45,14 +43,14 @@ def count_islands(grid):
                         # Check down
                         if grid[y+1][x] == 0:
                             islands += 1
-            # MIDDLE
+            # MIDDLE: Check all sides.
             else:
                 if grid[y][x] == '#':
-                    # Check right
-                    if grid[y][x+1] == 0:
-                        # Check down
-                        if grid[y+1][x] == 0:
-                            islands += 1
+                    if(
+                       grid[y][x+1] == 0 and grid[y+1][x] == 0
+                       and grid[y][x-1] == 0 and grid[y-1][x] == 0
+                       ):
+                        islands += 1
     return islands
 
 
