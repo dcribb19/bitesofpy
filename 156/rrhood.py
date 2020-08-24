@@ -68,5 +68,5 @@ def make_character_index(text=text, characters=CHARACTERS):
                 character_index[character.lower()].append(line[0])
     # Remove any duplicate line numbers.
     for k, v in character_index.items():
-        character_index[k] = sorted(list(set(v)))
+        character_index[k] = sorted(set(v))
     return character_index
