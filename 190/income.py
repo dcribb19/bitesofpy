@@ -24,7 +24,7 @@ def get_income_distribution(xml=countries):
       - values = list of country names (wb:name)
     """
     income_dist = defaultdict(list)
-    tree = ET.parse(countries)
+    tree = ET.parse(xml)
     root = tree.getroot()
     for child in root:
         income_dist[child[4].text].append(child[1].text)
