@@ -52,4 +52,4 @@ def add_todo(delay_time: str, task: str,
     remind_time = start_time + delta
     remind_time = remind_time.strftime('%Y-%m-%d %H:%M:%S')
 
-    return task + ' @ ' + remind_time
+    return f'{task} @ {remind_time}'
