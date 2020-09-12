@@ -1,0 +1,9 @@
+git.txt
+README.md
+.vscode/
+__pycache__/
+.pytest_cache/
+venv/
+
+dictionary.csv
+winter.csv
