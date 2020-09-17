@@ -19,5 +19,5 @@ def get_number_books_read(books_per_year_goal: int,
     if books_per_year_goal <= 0 or at_date < NOW:
         raise ValueError('Should have positive goal and future date')
 
-    week = at_date.isocalendar()[1]
+    _, week, _ = at_date.isocalendar()
     return floor(week / WEEKS_PER_YEAR * books_per_year_goal)
