@@ -34,7 +34,7 @@ def calc_max_uptime(reboots):
             continue
 
     boots = [parse(boot) for boot in boots]
-    time_diff = [(boots[x] - boots[x+1]).days
+    time_diff = [(boots[x] - boots[x + 1]).days
                  for x in range(len(boots)) if x != len(boots) - 1
                  ]
     return max(zip(time_diff, [boot.strftime('%Y-%m-%d') for boot in boots]))
