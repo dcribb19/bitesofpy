@@ -12,5 +12,6 @@ class Score(Enum):
     def __str__(self):
         return f'{self.name} => {THUMBS_UP * self.value}'
 
-    def average():
-        return sum(score.value for score in Score) / len(Score)
+    @classmethod
+    def average(cls):
+        return sum(score.value for score in cls) / len(cls)
