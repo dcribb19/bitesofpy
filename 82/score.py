@@ -13,7 +13,4 @@ class Score(Enum):
         return f'{self.name} => {THUMBS_UP * self.value}'
 
     def average():
-        avg = 0
-        for score in Score:
-            avg += score.value
-        return avg / len(Score)
+        return sum(score.value for score in Score) / len(Score)
