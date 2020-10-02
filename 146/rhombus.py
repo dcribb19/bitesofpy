@@ -27,5 +27,5 @@ def gen_rhombus(width):
     bottom.pop(0)
 
     rows = rows + bottom
-
-    return rows
+    for row in rows:
+        yield row
