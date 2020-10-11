@@ -15,4 +15,4 @@ class Animal:
 
     @classmethod
     def zoo(cls):
-        return cls.animals
+        return '\n'.join(cls.animals)
