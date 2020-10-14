@@ -8,7 +8,8 @@ Here I will build my Pythonic portfolio coding with PyBites!
     [270](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/270),
     [279](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/279)
 - Bioinformatics
-    - [262](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/262)
+    - [255](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/255),
+    [262](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/262)
 - Collections
     - [4](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/4),
     [6](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/6), 
@@ -30,11 +31,15 @@ Here I will build my Pythonic portfolio coding with PyBites!
     [124](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/124),
     [129](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/129),
     [130](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/130),
+    [145](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/145),
+    [170](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/170),
     [178](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/178),
+    [183](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/183),
     [184](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/184),
     [188](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/188),
     [195](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/195),
-    [202](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/202)
+    [202](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/202),
+    [281](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/281)
 - Data Formats
     - [13](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/13),
     [27](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/27),
@@ -137,7 +142,10 @@ Here I will build my Pythonic portfolio coding with PyBites!
     [6](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/6), 
     [18](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/18), 
     [55](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/55),
+    [145](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/145),
     [301](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/301)
+- contextlib
+    - [212](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/212)
 - csv
     - [290](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/290)
 - datetime
@@ -145,6 +153,7 @@ Here I will build my Pythonic portfolio coding with PyBites!
     [16](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/16),
     [19](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/19), 
     [51](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/51),
+    [145](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/145),
     [301](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/301)
 - itertools
     - [17](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/17),
@@ -152,6 +161,11 @@ Here I will build my Pythonic portfolio coding with PyBites!
     [222](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/222)
 - json
     - [301](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/301)
+- pandas
+    - [145](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/145),
+    [170](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/170),
+    [183](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/183), 
+    [281](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/281)
 - random
     - [70](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/70)
 - re
