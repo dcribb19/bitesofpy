@@ -12,9 +12,7 @@ def traffic_light():
     red = State(color='red', command='Stop', timeout=2)
     green = State(color='green', command='Go', timeout=2)
     amber = State(color='amber', command='Caution', timeout=0.5)
-    lights = cycle([red, green, amber])
-    while True:
-        yield next(lights)
+    return cycle([red, green, amber])
 
 
 if __name__ == '__main__':
