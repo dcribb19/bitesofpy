@@ -1,0 +1,50 @@
+<p>I have no idea what rabbit hole I followed to get to this point, but here I am. I found myself researching US tax brackets and how they are calculated. If you’re not from the US, don’t worry, you will still be able to figure it out and get this bad boy to pass.</p>
+<h4 id="us-2019-tax-bracket">US 2019 Tax Bracket</h4>
+<p>Here is the break-down on how much a US citizen’s income was taxed in 2019.</p>
+<pre class="text">
+      $0 - $9,700   10%
+  $9,701 - $39,475  12%
+ $39,476 - $84,200  22%
+ $84,201 - $160,725 24%
+$160,726 - $204,100 32%
+$204,101 - $510,300 35%
+$510,301 +          37%
+</pre>
+<p>The US tax law is pretty complex, so for now, this is all we are going to be dealing with. No filing jointly or as head of household.</p>
+<p>From looking at that bracket, you would think that someone having $40,000 of taxable income would be taxed $8,800, which is 22% of 40,000, but that is not the case.</p>
+<h4 id="how-taxes-are-calculated">How taxes are calculated</h4>
+<p>The actual taxes would be $4,658.50! Each level in the bracket is taxed at the amount shown. So the first $9,700 they would be taxed at 10%. The amount from $9,701 through $39,475 is taxed at 12%. Then the rest is then taxed at 22%.</p>
+<pre class="text">
+    9,700.00 x 0.10 =       970.00
+   29,775.00 x 0.12 =     3,573.00
+      525.00 x 0.22 =       115.50
+----------------------------------
+              Total =     4,658.50
+</pre>
+<blockquote>
+<p>More details can be found here at <a href="https://www.nerdwallet.com/blog/taxes/federal-income-tax-brackets/">nerdwallet</a> or many other places that are just a search away.</p>
+</blockquote>
+<h4 id="bite-challenge">Bite Challenge</h4>
+<p>So for this bite, you are going to be creating a class that will handle this all for you. I have created a <em>Bracket</em> namedtuple that you will use as the tax bracket. I’ve also created a <em>Taxed</em> namedtuple that you will use to store the taxed amounts.</p>
+<h3 id="sample-run">Sample Run</h3>
+<p>Here is a sample output from running the code in the <code>if __name__ == 'main'</code> statement:</p>
+<div class="sourceCode" id="cb3">
+<pre class="sourceCode zsh">
+          Summary Report
+==================================
+ Taxable Income:        40,000.00
+     Taxes Owed:         4,658.50
+       Tax Rate:           11.65%
+
+         Taxes Breakdown
+==================================
+    9,700.00 x 0.10 =       970.00
+   29,775.00 x 0.12 =     3,573.00
+      525.00 x 0.22 =       115.50
+----------------------------------
+              Total =     4,658.50
+</pre>
+</div>
+<p>The <em>Summary Report</em> is what will be returned when you <code>print()</code> the class. The whole report though, needs to be generated from the <code>report()</code> method that you will have to code.</p>
+<p>As usual, take a look at the source code and the docstrings for more details. I’ve left the type hints in the methods so that you will have an easier time with it, but if you need more direction, just let me know on Slack and I will add more details to these instructions.</p>
+<p><em>Happy coding!</em></p>
