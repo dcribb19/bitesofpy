@@ -1,0 +1,18 @@
+<p>Recursion in computer science is a method of solving a problem where the solution depends on solutions to smaller instances of the same problem (<a href="https://en.wikipedia.org/wiki/Recursion_(computer_science)" target="_blank">Wikipedia</a>).</p>
+
+<p>It's one of the most powerful programming techniques that has many interesting use cases. If implement it correctly, oftentimes it can offer insights to the seemingly complicated problems.  Some famous examples are <a href="https://en.wikipedia.org/wiki/Tower_of_Hanoi" target="_blank">Tower of Hanoi</a> and <a href="https://en.wikipedia.org/wiki/Factorial" target="_blank">factorial numbers</a>.</p>
+
+<p>Recursion has two distinct components:<ol>
+<li>The base case returns a value without making any subsequent calls, and</li>
+<li>the reduction step which reduces the size of problem to a small one in each step.</li>
+</ol></p>
+
+<p>In this bite you will take the challenge to solve a number conversion problem: given a positive number, and target base b, convert this number to that base.</p>
+
+<p>To make it a bit simpler, the base is guaranteed to be in one of these: 2, 6, or 8:<pre>
+# Example: we can ignore the prefix part of each base: such as '0b' for base 2, '0o'
+# for base 8, etc. Just return the converted number.
+>>> dec_to_base(10, 2) -> 1010   -  as of "0b1010"
+>>> dec_to_base(24, 6) -> 40
+>>> dec_to_base(256, 8) -> 400   -  as of "0o400"
+</pre></p>
