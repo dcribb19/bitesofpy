@@ -39,7 +39,7 @@ def get_top_titles(url, top=5):
     # Zip it all up!
     zipper = zip(titles, points, comments)
     # Create namedtuples.
-    entries = [Entry(x[0], x[1], x[2]) for x in zipper]
+    entries = [Entry(article[0], article[1], article[2]) for article in zipper]
     # Sort by highest total of points + comments and return.
     return sorted(
         entries,
