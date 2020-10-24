@@ -12,4 +12,4 @@ def common_words(sentence1: List[str], sentence2: List[str]) -> List[str]:
     """
     return sorted({x.lower() for x in sentence1} &
                   {x.lower() for x in sentence2},
-                  key=lambda x: len(x))
+                  key=len)
