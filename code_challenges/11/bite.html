@@ -1,0 +1,11 @@
+<p>Let's enrich an <em>Account</em> class by adding <em>dunder</em> (aka special) methods to support the following:</p>
+<ol>
+<li>length of the object: <code>len(acc)</code> returns the number of transactions</li>
+<li>account comparison: <code>acc1 &gt;,&lt;,&gt;=.&lt;=,== acc2</code> returns a boolean comparing account balances</li>
+<li>indexing: <code>acc[n]</code> shows the nth transaction on<code>account</code> (0 based)</li>
+<li>iteration: <code>list(acc)</code> returns a sequence of account transactions</li>
+<li>operator overloading: <code>acc + int</code> and <code>acc - int</code> can be used to add/subtract money</li>
+<li>string representation: <code>str(acc)</code> returns <em>NAME account - balance: INT</em></li>
+</ol>
+<p>The provided template already does some setup for you.</p>
+<p>Check out the tests for more specifics. If you're still new to dunder (magic) methods, <a href="https://dbader.org/blog/python-dunder-methods" target="_blank" rel="noopener">here is an article</a> you might find useful. Good luck!</p>
