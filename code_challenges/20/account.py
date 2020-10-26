@@ -21,6 +21,5 @@ class Account:
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        # Raise an exception to trigger a rollback.
         if self.balance < 0:
             self._transactions = self._copy_transactions
