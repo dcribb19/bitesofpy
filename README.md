@@ -6,6 +6,8 @@ Here I will build my Pythonic portfolio coding with PyBites!
     - [9](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/9),
     [263](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/263),
     [270](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/270),
+    [272](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/272),
+    [274](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/274),
     [279](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/279)
 - Bioinformatics
     - [255](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/255),
@@ -83,27 +85,36 @@ Here I will build my Pythonic portfolio coding with PyBites!
     [283](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/283),
     [291](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/291)
 - Decorators and Context Managers
-    - [22](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/22),
+    - [20](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/20),
+    [22](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/22),
     [41](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/41),
+    [88](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/88),
     [120](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/120),
     [212](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/212),
     [218](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/218)
 - Itertools
     - [17](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/17),
+    [63](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/63),
     [64](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/64),
+    [65](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/65),
     [66](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/66),
     [72](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/72),
     [99](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/99),
     [148](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/148),
+    [171](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/171),
     [208](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/208)
 - Object Oriented Programming
-    - [19](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/19),
+    - [11](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/11),
+    [19](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/19),
+    [20](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/20),
     [25](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/25),
     [71](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/71),
     [95](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/95),
     [114](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/114),
     [138](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/138),
-    [167](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/167)
+    [154](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/154),
+    [167](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/167),
+    [199](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/199)
 - Pytest
     - [238](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/238),
     [239](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/239),
@@ -125,8 +136,12 @@ Here I will build my Pythonic portfolio coding with PyBites!
     [133](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/133),
     [139](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/139),
     [150](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/150),
+    [155](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/155),
+    [157](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/157),
     [165](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/165),
-    [178](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/178)
+    [166](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/166),
+    [178](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/178),
+    [182](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/182)
 - Web Scraping
     - [4](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/4),
     [49](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/49),
@@ -134,7 +149,10 @@ Here I will build my Pythonic portfolio coding with PyBites!
     [97](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/97),
     [125](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/125),
     [190](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/190),
-    [193](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/193)
+    [193](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/193),
+    [205](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/205),
+    [226](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/226),
+    [256](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/256)
 
 ## Modules
 - collections
@@ -143,11 +161,20 @@ Here I will build my Pythonic portfolio coding with PyBites!
     [18](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/18), 
     [55](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/55),
     [145](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/145),
-    [301](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/301)
+    [205](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/205),
+    [226](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/226),
+    [256](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/256),
+    [287](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/287),
+    [301](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/301),
+    [304](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/304)
 - contextlib
-    - [212](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/212)
+    - [88](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/88),
+    [212](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/212)
 - csv
     - [290](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/290)
+- dataclasses
+    - [154](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/154),
+    [269](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/269)
 - datetime
     - [7](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/7), 
     [16](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/16),
@@ -155,23 +182,42 @@ Here I will build my Pythonic portfolio coding with PyBites!
     [51](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/51),
     [145](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/145),
     [301](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/301)
+- dateutil
+    - [256](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/256)
+- decimal
+    - [206](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/206)
+- functools
+    - [11](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/11),
+    [194](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/194)
 - itertools
     - [17](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/17),
+    [63](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/63),
+    [65](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/65),
     [148](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/148),
-    [222](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/222)
+    [171](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/171),
+    [222](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/222),
+    [287](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/287)
 - json
-    - [301](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/301)
+    - [256](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/256),
+    [301](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/301)
 - pandas
     - [145](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/145),
     [170](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/170),
     [183](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/183), 
+    [232](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/232),
     [281](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/281)
 - random
     - [70](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/70)
 - re
     - [4](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/4), 
-    [47](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/47)
+    [47](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/47),
+    [182](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/182),
+    [304](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/304)
+- requests
+    - [226](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/226),
+    [256](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/256)
 
 ### Other Concepts
 - Recursion
-    - [37](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/37)
+    - [37](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/37),
+    [274](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/274)
