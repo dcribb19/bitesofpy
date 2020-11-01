@@ -1,0 +1,15 @@
+<p>After <a href="../../../../../bites/19/">Bite 19. Write a simple property</a> let's write a bit more advanced one.</p>
+<p>In this Bite you are presented with a <code>NinjaBelt</code> class that keeps track of scores and Ninja Belts earned (a very real scenario). Some setup code has been provided like the <code>_score</code> and <code>_last_earned_belt</code> variables and the getter and setter methods that make up the property.</p>
+<p>The goal is to write a property called <code>score</code> that does the following:</p>
+<ol>
+<li>Make sure it can only be assigned an integer,</li>
+<li>It can not be assigned a score lower than the current score,</li>
+<li>It checks in <code>BELTS</code> if a new belt was earned (for example going from 49 to 50 you earn the <em>yellow belt</em>), if so it stores it in <code>self._last_earned_belt</code>.</li>
+<li>For each new score print a message:
+<ul>
+<li>If a new badge was earned: <em>Congrats, you earned {score} points obtaining the PyBites Ninja {rank} Belt</em></li>
+<li>Else just the new score: <em>Set new score to {score}</em></li>
+</ul>
+</li>
+</ol>
+<p>See the TESTS tab for more info. Good luck, have fun and keep calm and code in Python!</p>
