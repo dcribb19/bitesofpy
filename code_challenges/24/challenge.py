@@ -22,9 +22,7 @@ class BlogChallenge(Challenge):
         self.merged_prs = merged_prs
 
     def verify(self, input):
-        if input in self.merged_prs:
-            return True
-        return False
+        return input in self.merged_prs
 
     @property
     def pretty_title(self):
@@ -37,9 +35,7 @@ class BiteChallenge(Challenge):
         self.result = result
 
     def verify(self, input):
-        if input == self.result:
-            return True
-        return False
+        return input == self.result
 
     @property
     def pretty_title(self):
