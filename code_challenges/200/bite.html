@@ -1,0 +1,138 @@
+<p>My kids love <a href="https://www.minecraft.net">Minecraft</a> and they always want me to play with them. At times gathering resources can get boring so I sometimes deck them out with some enchanted items so that we can take on some pillager strongholds. Although typing in the commands is relatively simple, they can get pretty long and unwieldy!</p>
+<p>After doing it a few times, I decided to turn to my favorite tool, Python! This bite is actually my first step in creating a command line utility that generates the commands for me. I've already done this but I thought it would be great to see how others would tackle the same problem. Your challenge here is to scrape <a href="https://www.digminecraft.com/lists/enchantment_list_pc.php">digminecraft.com</a> for a list of enchantable items and create a couple of classes from the information gathered.</p>
+<p>What I'm looking for is a dictionary of Minecraft items. The page only contains information on the enchantments so that is all we'll be focusing on. If done correctly the <strong><code>main()</code></strong> function should print the following results:</p>
+<pre>Armor:
+  [1] binding_curse
+  [4] blast_protection
+  [4] fire_protection
+  [4] projectile_protection
+  [4] protection
+  [3] thorns
+
+Axe:
+  [5] bane_of_arthropods
+  [5] efficiency
+  [3] fortune
+  [5] sharpness
+  [1] silk_touch
+  [5] smite
+
+Boots:
+  [3] depth_strider
+  [4] feather_falling
+  [2] frost_walker
+
+Bow:
+  [1] flame
+  [1] infinity
+  [5] power
+  [2] punch
+
+Chestplate:
+  [1] mending
+  [3] unbreaking
+  [1] vanishing_curse
+
+Crossbow:
+  [1] multishot
+  [4] piercing
+  [3] quick_charge
+
+Fishing Rod:
+  [3] luck_of_the_sea
+  [3] lure
+  [1] mending
+  [3] unbreaking
+  [1] vanishing_curse
+
+Helmet:
+  [1] aqua_affinity
+  [3] respiration
+
+Pickaxe:
+  [5] efficiency
+  [3] fortune
+  [1] mending
+  [1] silk_touch
+  [3] unbreaking
+  [1] vanishing_curse
+
+Shovel:
+  [5] efficiency
+  [3] fortune
+  [1] silk_touch
+
+Sword:
+  [5] bane_of_arthropods
+  [2] fire_aspect
+  [2] knockback
+  [3] looting
+  [1] mending
+  [5] sharpness
+  [5] smite
+  [3] sweeping
+  [3] unbreaking
+  [1] vanishing_curse
+
+Trident:
+  [1] channeling
+  [5] impaling
+  [3] loyalty
+  [3] riptide
+</pre>
+<h3>Tasks to complete:</h3>
+<h4><strong>Enchantment class</strong></h4>
+<ul>
+<li><strong>id_name</strong>: Internal name of the enchantment</li>
+<li><strong>name</strong>: User friendly name of the enchantment</li>
+<li><strong>max_level</strong>: Enchantment level. Original is in Roman numerals; they need to be converted to integers</li>
+<li><strong>description</strong>: Summary of what the enchantment does</li>
+<li><strong>items</strong>: List of item names that are typically enchanted with this enchantment.</li>
+</ul>
+<div>If, for example, the <strong><code>mending</code></strong> instance is printed, it should look like this:
+<p><code>Mending (1): Uses xp to mend your tools, weapons and armor</code></p>
+<p><strong>NOTE</strong>: Notice that the name is title cased, <code>max_level</code> is surrounded by parenthesis, which is followed by the description.</p>
+<p>If you print its items, it would look like this:</p>
+<p><code>['sword', 'chestplate', 'pickaxe', 'fishing_rod']</code></p>
+</div>
+<p><strong>NOTE</strong>: Notice that the items are not in alphabetical order! They are stored in the order in which they are parsed from the html and are only alphabetized when the instance in printed.</p>
+<h4><strong>Item class</strong></h4>
+<ul>
+<li><strong>name</strong>: Name of the item</li>
+<li><strong>enchantments</strong>: List of the enchantment instances.</li>
+</ul>
+<div>
+<p>If, for example, the <strong><code>fishing_rod</code></strong> object is printed, it should look like this:</p>
+<pre>Fishing Rod: 
+  [3] luck_of_the_sea
+  [3] lure
+  [1] mending
+  [3] unbreaking
+  [1] vanishing_curse</pre>
+<p><strong>NOTE</strong>: Notice that the name is title cased and that the <code>_</code> has been replaced with a space!</p>
+<p>If you were to print each enchantment belonging to the <code>fishing_rod</code>, it would look like this:</p>
+<pre>Curse of Vanishing (1): Cursed item will disappear after player dies
+Luck of the Sea (3): Increases chances of catching valuable items
+Lure (3): Increases the rate of fish biting your hook
+Mending (1): Uses xp to mend your tools, weapons and armor
+Unbreaking (3): Increases durability of item</pre>
+<p><strong>NOTE</strong>: Notice that this output is exactly like the one for the Enchantment objects, because that's what they are.</p>
+</div>
+<h3>The following functions are what you will need to complete:</h3>
+<h4><strong>generate_enchantments</strong></h4>
+<ul>
+<li>This function is responsible for generating a dictionary of the Enchantment objects.</li>
+</ul>
+<h4><strong>generate_items</strong></h4>
+<ul>
+<li>This function is responsible for generating a dictionary of the Item objects.</li>
+</ul>
+<h3>Some helpful tips:</h3>
+<p>Each of the enchantments has an image in place of actual item names. The best thing that I could come up with was to clean up the image name and extract the information from them. Removing the following from the names will do the job: ".", "_", "enchanted", "iron", "png", and "sm"</p>
+<p>For example, <code>vanishing_curse</code> has this image:</p>
+<p><code>https://www.digminecraft.com/enchantments/images/sword_chestplate_pickaxe_fishing_rod_sm.png</code></p>
+<p>Which would be scraped as <code>["sword", "chestplate", "pickaxe", "fishing_rod"]</code> for that enchantment.</p>
+<p><strong>NOTE</strong>: Caution must be taken here since <strong>fishing_rod</strong> is a valid item name that must be maintained!</p>
+<p>The titles will need some work as well. In it's raw form the titles are listed as <code>Aqua Affinity(aqua_affinity)</code>. You'll have to separate the two and assign them to their correct variables: <code>name</code> and <code>id_name</code>, where the latter is the one in parenthesis.</p>
+<h3>Final Note</h3>
+<p>Pay attention to that output above. Not only are the items sorted, but also each of the item's enchantments! Don't try and modify the output from <code>main()</code> as that is not used in the testing.</p>
