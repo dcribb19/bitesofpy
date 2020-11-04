@@ -42,8 +42,10 @@ class Item:
 
     def __str__(self) -> str:
         ret_string = f"{self.name.replace('_', ' ').title()}: "
+        self.enchantments = sorted(self.enchantments, key=lambda x: x.id_name)
         for enchantment in self.enchantments:
-            ret_string += f'\n  [{enchantment.max_level}] {enchantment.id_name}'
+            ret_string += (f'\n  [{enchantment.max_level}] '
+                           f'{enchantment.id_name}')
         return ret_string.strip()
 
 
@@ -59,6 +61,8 @@ def generate_enchantments(soup):
         columns = row.find_all('td')
         id_name = columns[0].find('a').get('href').replace(
             '/enchantments/', '').replace('.php', '')
+        if id_name == 'sweeping_edge':
+            id_name = id_name.replace('_edge', '')
 
         items = columns[4].contents[0].get('data-src').split(
             'images/')[1].replace('.png', '')
@@ -93,11 +97,6 @@ def generate_items(data):
         item_dict[k] = Item(k, v)
     # sort alphabetically by keys
     item_dict = OrderedDict(sorted(item_dict.items(), key=lambda x: x[0]))
-    for k in item_dict.keys():
-        item_dict[k].enchantments = sorted(
-            item_dict[k].enchantments,
-            key=lambda x: x.id_name
-            )
     return item_dict
 
 
