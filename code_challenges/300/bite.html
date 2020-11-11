@@ -1,0 +1,29 @@
+<p>We've all been affected by COVID-19 in one way or another. One way that I've been affected is with my vacation time or PTO ("paid time off"). In the job that I do, I can't simply take time off. A replacement has to be flown in so the company has "Vacation Coverage" guys.</p>
+<p>We were recently told that due to the pandemic all non-essential travel is prohibited, so no vacation coverage! On top of that, company policy to "use or lose" vacation was still in effect. So we have to figure out how to use our vacation time before the year ends or we lose it!</p>
+<p>I dabble in Python a bit, so I figured that I could leverage those skills into creating a list of dates that I can take off and what better days to take off than Friday and Monday, therefore maximizing the time off at my disposal! At the same time, I wanted to be able to generate a list of my actual work days left for the remainder of the year.</p>
+<p>Sounds simple, but there are some things to consider like federal holidays. If a holiday falls on either of those days, then I don't consider that a valid staycation weekend. The company frowns on taking extra days off on holiday weekends. Also, I'm working from home a couple of days per week so those must not be counted as work days either.</p>
+<p>I know, it's unrealistic that I only work one day per week, but just play along for now.</p>
+<h3>Four Day Weekend Report</h3>
+<p>This report should include the following:</p>
+<p>- number of four-day weekends left until the end of the year</p>
+<p>- display your current PTO hours (days)</p>
+<p>- your PTO balance if you were to take every Friday and Monday off until the end of the year</p>
+<p>- list the dates of valid four day weekends, i.e. [Friday, Monday]</p>
+<p>- indicate which weekend marks the point were you will start loosing vacation days if you don't start taking days off with an asterisk</p>
+<h3>Example of what it should look like</h3>
+<pre>&nbsp; 18 Four-Day Weekends<br />========================<br />  &nbsp; PTO: 200 (25 days)<br />BALANCE: -88 (11 days)<br /><br />2020-08-07 - 2020-08-10<br />...<br />2020-09-18 - 2020-09-21 *<br />...<br />2020-12-18 - 2020-12-21</pre>
+<h3>Work Day Report</h3>
+<p>For this portion of the code, you will generate a report like the last one, but this time with the following:</p>
+<p>- remaining work hours/days</p>
+<p>- list of dates</p>
+<h3>Example of what it should look like</h3>
+<pre>Remaining Work Days: 184 (23 days)<br />2020-08-03<br />2020-08-06<br />...</pre>
+<h3>The function</h3>
+<p>Your task for this challenge will be to complete the <code>four_day_weekends()</code> function. The function will take three named arguments, <code>start_month</code>, <code>paid_time_off</code> and <code>show_workdays</code>, each having default values.</p>
+<p>If the function is called without specifying which variable it belongs to, a <code>ValueError</code> should be raised with the provided <code>ERROR_MSG</code> variable.</p>
+<h3>Valid calls</h3>
+<pre>four_day_weekends()<br />four_day_weekends(start_month=9)<br />four_day_weekends(paid_time_off=80)<br />four_day_weekends(show_workdays=True)<br />four_day_weekends(start_month=7, show_workdays=True)</pre>
+<h3>Invalid calls</h3>
+<pre>four_day_weekends(8)<br />four_day_weekends(True)</pre>
+<h3>Conclusion</h3>
+<p>I usually tend to guide you towards a certain solution. In this Bite, I'm leaving it up to you how you accomplish it. As long as you get the same results, it will do. Have fun!</p>
