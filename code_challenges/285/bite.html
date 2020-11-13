@@ -1,0 +1,17 @@
+<p>Sometimes dealing with data can be a real struggle.</p>
+<p>Sometimes it's delivered in a undesirable format that you have no control over. Sometimes things can get ugly.&nbsp;&nbsp;</p>
+<p>But you're a <strong>PyBites Ninja!</strong> You persevere, you overcome any obstacle!&nbsp;&nbsp;</p>
+<p>The networking team is writing a Python script to help keep track of inventory and they need some assistance.&nbsp;</p>
+<p><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">---&nbsp; &nbsp; </span>&nbsp;&nbsp;</p>
+<p>They give you a list of data that looks something like this:&nbsp;</p>
+<pre>data = [['ip', ['"172.16.0.0"'], 'mask', ['12'], 'type', ['ip_mask']]</pre>
+<p>And need to extract the IP address information into a list of 2-tuples(ip, mask) like this:&nbsp;&nbsp;</p>
+<pre>[('172.16.0.0', '12'), ...]</pre>
+<p>---&nbsp; &nbsp;&nbsp;</p>
+<p>Here's another example of a deeply nested list:&nbsp;&nbsp;</p>
+<pre>[['TEST', ['parent', [], 'uuid', ['"khk-yyas4h-323223-wewe-343er-3434-www"'], <br />  'display_name', ['"services"'], 'IPV4', [[['ip', ['"1.1.1.0"'], 'mask', ['20'], <br />  'type', ['ip_mask']], ['ip', ['"2.2.2.2"'], 'mask', ['32'], 'type', ['ip_mask']<br />]]]]]]</pre>
+<p>And the expected output:&nbsp;&nbsp;</p>
+<pre>[('1.1.1.0', '20'), ('2.2.2.2', '32')]</pre>
+<p>---</p>
+<p>The IP information is nested inside lists-of-lists-of-lists-of...&nbsp; It's really really badly structured data that has no business being in this format.</p>
+<p>Can you help get requested information out of "this heap of trash"?</p>
