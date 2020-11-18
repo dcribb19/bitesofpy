@@ -1,7 +1,7 @@
 import os
 import re
 from difflib import SequenceMatcher
-from itertools import permutations
+from itertools import permutations, combinations
 from urllib.request import urlretrieve
 
 # prep
@@ -33,3 +33,11 @@ def get_similarities(tags=None):
     tags = tags or _get_tags()
     return (tag for tag in permutations(tags, 2)
             if SequenceMatcher(None, tag[0], tag[1]).ratio() > SIMILAR)
+
+
+def get_similarities_comb(tags=None):
+    tags = tags or _get_tags()
+    '''Also works, slightly slower for 1 execution .0066 vs .0042.'''
+    return (tag for tag in combinations(tags, 2)
+            if SequenceMatcher(None, tag[0], tag[1]).ratio() > SIMILAR
+            or SequenceMatcher(None, tag[1], tag[0]).ratio() > SIMILAR)
