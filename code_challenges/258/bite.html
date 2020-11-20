@@ -1,0 +1,38 @@
+<p>One of the benefits of accounting is being able to see the financial position of a company at a point in time by viewing financial statements. Financial statements usually present financial information for multiple years side by side, as it is very useful to then see how the company's financial health changes over time by comparing the balances from one year to the next.</p>
+
+<h4>Balance Sheet Example</h4>
+
+<p>Let's look at a sample of the assets from a comparative Balance Sheet of ABC, Inc. as of 12/31/2020 and 12/31/2019. Note this is a very simple example, with just a small number of accounts:<pre>
+Line Item                    12/31/20        12/31/19
+
+ASSETS
+Cash                             $500            $300
+Accounts Receivable               200             100
+                             --------------------------
+TOTAL ASSETS                      700             400
+</pre></p>
+
+<p>The amounts under each year provides important and useful information about the company for that year, but the real rich information lies in the change in balances from one year to the next. This is referred to as the <code>fluctuation</code>, or <code>flux</code> for short. </p>
+
+<h4>Calculating the Flux</h4>
+
+<p>A <code>flux</code> can represent the <code>dollar amount</code> of the change, as well as the <code>percentage</code> change. The dollar amount flux is calculated by subtracting the balance in the prior year from the current year. The percent flux is calculated by dividing the dollar flux by the prior year amount. Next, one would typically identify large fluctuations that should be explained, using a minimum dollar and % change threshold. </p>
+
+<h4>We're accounting on you now</h4>
+
+<p>Now that you understand the basics of calculating a flux and identifying the line items that are over a threshold, it's time to help us do a flux analysis. You may find <code>pandas</code> is a good library to use, or if you want a real challenge, you can try using just the standard library!</p>
+
+<p>Within the <code>calculate_flux</code> function: <ol>
+<li>Read in the financial statement line items from the csv file <code>xyz.csv</code>. The three columns are Account, 12/31/20, and 12/31/19. Make sure the amounts are treated as integers.</li>
+<li>Create a Dollar Flux column that represents the 12/31/20 balance minus 12/31/19 balance.</li>
+<li>Create a Percentage flux column that represents the dollar flux divided by the 12/31/19 balance.</li>
+<li>Return a list of tuples, with each tuple representing one row from the financial statement, including the two new columns.</li>
+</ol></p>
+
+<p>Within the <code>identify_flux</code> function: <ol>
+<li>Use the <code>calculate_flux</code> output as the parameter. </li>
+<li>Using the empty list <code>flagged_lines</code>, iterate through the financial statement lines, and if both the dollar and percent flux amounts (make sure to use absolute values) are over the threshold amounts in THRESHOLDS, add the whole tuple to <code>flagged_lines</code>. (Note: If the prior year balance is $0, then the % should be considered above the threshold)</li>
+<li>Return the <code>flagged_lines</code> list, which will be a list of tuples that only includes those line items that meet the threshold criteria.</li>
+</ol></p>
+
+<p>Good luck and don't forget, keep calm and do accounting in Python! PS - if you want to learn more ways to do accounting in Python, check out the <a href="https://www.youtube.com/channel/UCQN09g3-sWVRDQc93WRZKYg" target="_blank" target="_blank">Pythonic Accountant youtube channel</a>.</p>
