@@ -1,0 +1,78 @@
+<p>For this bite, you are going to scrape the books from <a href="https://bookauthority.org/books/best-programming-books">100 Best Programming Books of All Time</a>. Only include the ones with the word <i>python</i> in their titles (case insensitive match).</p>
+
+<p>Since the page gets generated via JavaScript, we will be providing you with the source and the code to load it up and bundle it into a <code>BeautifulSoup</code> object for you. All you will have to do is scrape the necessary data and create Book objects from it.</p>
+
+<h4 id="the_book_class">The <em>Book</em> class</h4>
+
+<p>Create a class for the books which should have the following class variables:</p>
+<ul>
+  <li><strong>title</strong>: <code>string</code> as it appears on the page</li>
+  <li><strong>author</strong>: <code>string</code> should be entered as lastname, firstname</li>
+  <li><strong>year</strong>: <em>four digit</em> <code>integer</code> year that the book was published</li>
+  <li><strong>rank</strong>: <code>integer</code> rank to be updated once the books have been sorted</li>
+  <li><strong>rating</strong>: <code>float</code> as indicated on the page</li>
+</ul>
+
+<p>When you print a <code>Book</code> it should be formatted as follows:
+<pre>[001] Python Tricks (2017)
+      Bader, Dan 4.74
+</pre>
+</p>
+
+<h4 id="theload_datafunction">The <em>load_data()</em> function</h4>
+
+<p>With this function you will load the data from the <em>html_file</em>. This is where you will call the <code>_get_soup()</code> function that has been provided for you.</p>
+
+<ul>
+<li>Loads the <code>soup</code> object</li>
+
+<li>Extract the information from the <code>soup</code> object required to create the <code>Book</code> instances</li>
+
+<li>Returns a sorted <em>list</em> of <code>Book</code> objects</li>
+</ul>
+
+<blockquote>
+  <p><strong>NOTE</strong>: If any of the required attributes is missing from any of the books, dump the book and don't include it.</p>
+
+  <p><strong>SORTING</strong>:<code> Books</code> should be sorted descending by <code>rating</code> and ascending by <code>year</code>, <code>title</code>, and then by <code>author</code>'s last name; <strong>in that order</strong>. When sorting the titles, make sure to sort them with either <code>.title()</code>, <code>.lower()</code>, or <code>.upper()</code> but take care not to change the original.</p>
+
+  <p><strong>RANKING</strong>: After the books have been sorted, the rank of each book
+  needs to be updated to indicate this new sorting order.The <code>Book</code> object
+  with the highest rating should be first and go down from there.</p>
+</blockquote>
+
+<h4 id="thedisplay_booksfunction">The <em>display_books()</em> function</h4>
+
+<p>With this function, you are simply going to print the specified books to the console. You will need to implement the following variables:</p>
+
+<ul>
+<li><strong>books</strong>: <code>list</code> of all the sorted <code>Books</code></li>
+
+<li><strong>limit</strong>: <code>integer</code> that indicates how many books to return, defaults to <code>10</code></li>
+
+<li><strong>year</strong>: <code>integer</code> indicating the oldest year to include, i.e. 2017, defaults to <code>None</code></li>
+</ul>
+
+<p>If it's called with more books than are in the list, it should only display the max books that are available and not fail.</p>
+
+<h4 id="samplecalltodisplay_books">Sample call to <code>display_books()</code>:</h4>
+
+<p><code>display_books(books, limit=5, year=2017)</code></p>
+
+<pre>[001] Python Tricks (2017)
+      Bader, Dan 4.74
+[002] Mastering Deep Learning Fundamentals with Python (2019)
+      Wilson, Richard 4.7
+[006] Python Programming (2019)
+      Fedden, Antony Mc 4.68
+[007] Python Programming (2019)
+      Mining, Joseph 4.68
+[009] A Smarter Way to Learn Python (2017)
+      Myers, Mark 4.66
+</pre>
+
+<blockquote>
+  <p><strong>NOTE</strong>: Notice that the books ranking 003, 004, and 005 are not listed. That's because I specified that the oldest date to include as 2017 and those books were older then that. Another point to note, is that books ranking 006 and 007 both have the same rating, book titles, and release dates but they were sorted by the author's last name!</p>
+</blockquote>
+
+<p>This is an advanced bite, so don't despair! Keep at it and you will emerge victorious! I look forward to seeing your submissions in the forum!</p>
