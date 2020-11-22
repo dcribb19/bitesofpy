@@ -1,0 +1,13 @@
+<p>In <a href="https://codechalleng.es/bites/256/">Bite 256</a> you scraped data on 2019 PyCons. Now it's time to go there! In this Bite you enrich the data with geographical information and create a travel plan to visit all the PyCons! This will involve using some data from an geographical information API.</p>
+
+<p>First you have to collect the rough geographical location data for the different PyCons. An excellent source for such data is OpenStreetMaps. You will use data from the <a href="https://nominatim.openstreetmap.org/" target="_blank">Nominatim API</a> to complete the <code>update_pycons_lat_lon</code> function which updates the PyCon data with latitude and longitude of the corresponding city. </p>
+
+<p>For example, if you want to get information on Munich you can use <a href="https://nominatim.openstreetmap.org/search?q=Munich,Germany&amp;format=json&amp;accept-language=en" target="_blank">this query</a> which asks for the city and country <code>q=Munich,Germany</code>, the format <code>&amp;format=json</code> and the output language <code>&amp;accept-language=en</code>.</p>
+
+<p>Due to limitations of API calls (max. one call per second), we stored the required requests in the <code>nominatim_responses.json</code> file. The JSON file holds the query url as the <code>key</code> to the response data (nested <code>dict</code>). If you are interested in details on the online API see the <a href="https://nominatim.org/release-docs/develop/api/Search/" target="_blank">this page</a>.</p>
+
+<p>After you retrieved and updated the information, plan your journey by completing the <code>create_travel_plan</code> function. Here you want to bring the PyCons in the right order as you won't be able to visit PyCons that lie in the past :) For ordering assume it's now the start of 2019. </p>
+
+<p>Finally, complete the <code>total_travel_distance</code> function which takes your journey from the <code>create_travel_plan</code> function and returns the total distance you traveled for the complete PyCon journey. For simplicity, only consider the air distance in kilometers between the PyCons using the helper function <code>_km_distance</code>.</p>
+
+<p>Good luck and keep calm and see you at the next PyCon events! :)</p>
