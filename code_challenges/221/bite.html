@@ -1,0 +1,19 @@
+<p><img style="width: 400px; float: right; margin-left: 20px;" src="https://bites-data.s3.us-east-2.amazonaws.com/nyt_bestsellers.png" alt="NY Times best seller list at the time of writing this Bite" />In this Bite you are going to parse <a href="https://www.nytimes.com/books/best-sellers/hardcover-nonfiction" target="_blank">NY Times Best Seller Lists</a> using <a href="https://developer.nytimes.com" target="_blank">The New York Times Developer Network</a>.</p><p>This is the endpoint you will use: <i>https://api.nytimes.com/svc/books/v3/lists/current/hardcover-nonfiction.json?api-key=yourkey</i> (the tests also use <i>hardcover-fiction.json</i>).</p> <p>Feel free to create an account and obtain an API key to try this out locally. To work with static data we've mocked out the response in the tests.</p><p>Code <code>get_best_seller_titles</code> below, for the non-fiction best seller list, the function should return the following <code>list</code> of <code>tuple</code>s:<div style="float: left; width: 50%"><pre>
+[
+  ('BETWEEN THE WORLD AND ME', 86),
+  ('EDUCATED', 79),
+  ('BECOMING', 41),
+  ('THE SECOND MOUNTAIN', 18),
+  ('THE PIONEERS', 16),
+  ('MAYBE YOU SHOULD TALK TO SOMEONE', 14),
+  ('UNFREEDOM OF THE PRESS', 14),
+  ('RANGE', 9),
+  ('THREE WOMEN', 7),
+  ('TRICK MIRROR', 3),
+  ('HOW TO BE AN ANTIRACIST', 2),
+  ('KOCHLAND', 2),
+  ('THANK YOU FOR MY SERVICE', 1),
+  ('THE OUTLAW OCEAN', 1),
+  ('GODS OF THE UPPER AIR', 1)
+]
+</pre></p><p style="clear: both;">Keep this script at hand, maybe you can run it in a few months and compare the results. Or collect it weekly or monthly and start plotting the data?</p><p>Have fun and learn more Python and APIs!</p></div>
