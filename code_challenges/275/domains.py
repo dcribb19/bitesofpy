@@ -24,7 +24,7 @@ def get_most_common_domains(emails, common_domains=None):
         common_domains = get_common_domains()
     c = Counter()
     for email in emails:
-        domain = email.split('@')[-1]
+        _, domain = email.split('@')
         if domain not in common_domains:
             c[domain] += 1
     return c.most_common()
