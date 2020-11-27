@@ -1,0 +1,70 @@
+<p>In this Bite, you are going to get some practice playing around with some structured query language (SQL) that's used to work with databases.</p>
+<p>If you are not familiar with SQL, a nice little introduction can be found at <a href="https://www.digitalocean.com/community/tutorials/how-to-use-the-sqlite3-module-in-python-3" target="_blank" rel="noopener">Digital Ocean</a>.</p>
+<p>To solve this Bite, you will use the <a href="https://docs.python.org/3/library/sqlite3.html" target="_blank" rel="noopener">sqlite3</a> module. SQLite is a C library that provides a lightweight disk-based database that doesn't require a separate server process and allows accessing the database using a nonstandard variant of the SQL query language.</p>
+<p>If you master this Bite, as well as being able to use&nbsp;<code><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">sqlite3</span></code><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"> in&nbsp;</span>your own projects to store data outside the current session, you will be able to use what you have learned about <code>SQL</code> to work with databases like MySQL and PostgreSQL.</p>
+<h3>Task</h3>
+<p>Your task is to create a DB class that does some basic <em>CRUD</em> (Create, Read, Update, Delete) operations. You may find it helpful to follow the Digital Ocean tutorial when implementing this class.</p>
+<h4>DB Class</h4>
+<p>The class is initialized with just <code>DB()</code> to create an in-memory database but if a file name is given, then the database is saved to that location. You will also need to initialize the class variables <code>connection</code>, <code>cursor</code> and table_schemas.</p>
+<p>As the names imply, <code>connection</code> holds the connection to the database, <code>cursor</code> holds the cursor that allows you to send SQL statements to a SQLite database and <code>table_schemas</code> holds the schema for each table (column names and allowed types).</p>
+<p>Although you will be adding the option to create an on-file database, your class will be tested only with an in-memory one, so the actual database doesn't really get created on disk.</p>
+<p>The class already implements a context manager behavior thanks to the <code>__enter__</code> and <code>__exit___</code>methods. Thus, you can use the class as a context manager:</p>
+<pre>with DB() as db:<br />  &nbsp; db.create(table, schema, primary_key)<br />  &nbsp; db.insert(table, values)</pre>
+<h4>Class Methods</h4>
+<p>The skeletons of the methods are supplied for you to flesh out.</p>
+<p>- <code>create()</code> - Creates a new table<br />- <code>delete()</code> - Deletes a record<br />- <code>insert()</code> - Inserts one or multiple new records<br />- <code>select()</code> - Reads data from a table<br />- <code>update()</code> - Updates a record</p>
+<p>As always, feel free to add any helper method that suits you.</p>
+<p>Docstrings are provided with all of the above methods to explain their purpose in more detail.</p>
+<h4>Class Property</h4>
+<p>There is one property in the class that you will need to implement. It's used to report the total changes made during the connection to the database.</p>
+<p><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">- <code>num_transactions()</code> - The total number of changes since the database connection was opened.</span></p>
+<h4>Database Schema</h4>
+<p>There is one addition that was made to this bite that goes beyond the mentioned Digital Ocean tutorial: <a href="https://en.wikipedia.org/wiki/Database_schema" target="_blank" rel="noopener">Database schema</a>.</p>
+<p>In a real-world application it is essential to understand and know the database schema because it tells you, among many other things, what the data looks like.</p>
+<p>In other words, the schema defines the allowed data types for each table and each column.</p>
+<p>In this Bite a schema is passed as second argument to the <code>create()</code> method to tell the <code>DB</code> class the allowed column types for each column.</p>
+<p>Therefore, a schema is a list of tuples of pairs of column name and column type. SQLite 3 supports certain <a href="https://docs.python.org/2/library/sqlite3.html#sqlite-and-python-types" target="_blank" rel="noopener">types</a> and each type has a corresponding type in Python 3. For example, the SQLite type <code>INTEGER</code> maps to the Python type <code>int</code>.</p>
+<p>You are given an <a href="https://docs.python.org/3/library/enum.html" target="_blank" rel="noopener">enumeration</a> class <code>SQLiteType</code> that you can use to translate between the two worlds, SQLite and Python. The idea is that you have to limit the choice for a column type to the entries of this enumeration.</p>
+<p>To use this class, you can access the items per dot notation, as demonstrated in the docstrings of the <code>create()</code>&nbsp;method:</p>
+<pre>[("make", SQLiteType.TEXT), ("year": SQLiteType.INTEGER)]</pre>
+<p>To access the name of an enumeration, use the <code>name</code> property:&nbsp; <code>SQLiteType.INTEGER.name</code>. <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">This </span><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">will return the string "INTEGER".</span></p>
+<p>To access the value of an enumeration, use the <code>value</code> property: <code>SQLiteType.INTEGER.value</code>.</p>
+<p>This will return the value, in this case the Python type <code>int</code>.</p>
+<p>You need this information to finish the <code>insert()</code>&nbsp;method because you are expected to raise a&nbsp;<code>SchemaError</code> exception (also provided in the template) whenever someone calls the <code>insert()</code> method with the wrong number of values (less or more values than columns) or the wrong type as defined in the table schema.</p>
+<h4>Primary Key</h4>
+<p>Another common concept for dealing with databases is the concept of primary keys (you are not dealing with foreign keys in this Bite).</p>
+<p>Simply put, a primary key is the column that serves as primary identification column for its table and each entry (row) must have a unique and valid value for this primary key. In most databases, if no primary key is specified, the database creates a unique ID column that serves this purpose. However, in this bite, the primary key is explicitly given as the third argument of the <code>create()</code> method.</p>
+<p>For the <code>create()</code>&nbsp;method, you have to make sure that the primary key is part of the table schema, so there must be a column that matches the primary key.</p>
+<h3>Test Data</h3>
+<p>The tests rely on a small table with brave pybite ninjas:</p>
+<table style="border-collapse: collapse; width: 100%; height: 104px;" border="1">
+<tbody>
+<tr style="height: 21px;">
+<td style="width: 50%; height: 21px;"><strong>ninja</strong></td>
+<td style="width: 50%; height: 21px;"><strong>bitecoins</strong></td>
+</tr>
+<tr style="height: 21px;">
+<td style="width: 50%; height: 21px;">taspotts</td>
+<td style="width: 50%; height: 21px;">906</td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 50%; height: 20px;">Tomade</td>
+<td style="width: 50%; height: 20px;">896</td>
+</tr>
+<tr style="height: 21px;">
+<td style="width: 50%; height: 21px;">tasoak</td>
+<td style="width: 50%; height: 21px;">894</td>
+</tr>
+<tr style="height: 21px;">
+<td style="width: 50%; height: 21px;">clamytoe</td>
+<td style="width: 50%; height: 21px;">890</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>The first column <code>ninja</code> is of type TEXT and the second column <code>bitecoins</code>&nbsp;is of type INTEGER.</p>
+<p>The column <code>ninja</code>&nbsp;is the primary key for this table.</p>
+<p>To create this table with the provided <code>DB</code> class, the following code will be used:</p>
+<pre>NINJAS = [<br />  &nbsp; ("taspotts", 906),<br />  &nbsp; ("Tomade", 896),<br />  &nbsp; ("tasoak", 894),<br />  &nbsp; ("clamytoe", 890),<br />]<br />DB_SCHEMA = [("ninja", SQLiteType.TEXT), ("bitecoins", SQLiteType.INTEGER)]<br /><br />with DB() as db:<br />  &nbsp; db.create("ninjas", DB_SCHEMA, "ninja")<br />&nbsp; &nbsp; db.insert("ninjas", NINJAS)</pre>
+<h3>Conclusion</h3>
+<p>Go forth and create!</p>
