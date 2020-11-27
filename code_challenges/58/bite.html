@@ -1,0 +1,103 @@
+<p>Below is a Groceries class with add/delete/show/search methods.</p><p>You as a Python Developer are asked to give your users a command line interface so they can use the program. In real life we would have a persistent DB behind it, but let's focus on practicing <code>argparse</code>.</p><p>If new to <code>argparse</code> you might want to check out Bites <a href="https://codechalleng.es/bites/56/">56</a> and <a href="https://codechalleng.es/bites/57/">57</a> first.</p><p>The program should work as shown here:<pre>
+$ python groceries.py -h
+usage: groceries.py [-h] [-a ADD ADD ADD | -d DELETE | -l | -s SEARCH]
+
+optional arguments:
+-h, --help            show this help message and exit
+-a ADD ADD ADD, --add ADD ADD ADD
+                        add item providing name (str), price (int), and
+                        craving (bool)
+-d DELETE, --delete DELETE
+                        delete a product by name (str)
+-l, --list            show items in cart
+-s SEARCH, --search SEARCH
+                        search items by name
+
+$ python groceries.py -l
+celery                         |   1
+apples                         |   4
+water                          |   2
+coffee                         |   5
+chicken                        |   6
+pizza (craving)                |   4
+------------------------------------
+Total                          |  22
+
+$ python groceries.py -s coffee
+coffee                         |   5
+------------------------------------
+Total                          |   5
+
+$ python groceries.py -a honey 5 False
+celery                         |   1
+apples                         |   4
+water                          |   2
+coffee                         |   5
+chicken                        |   6
+pizza (craving)                |   4
+honey                          |   5
+------------------------------------
+Total                          |  27
+
+$ python groceries.py -a chocolate 3 True
+celery                         |   1
+apples                         |   4
+water                          |   2
+coffee                         |   5
+chicken                        |   6
+pizza (craving)                |   4
+chocolate (craving)            |   3
+------------------------------------
+Total                          |  25
+
+$ python groceries.py -d chicken
+celery                         |   1
+apples                         |   4
+water                          |   2
+coffee                         |   5
+pizza (craving)                |   4
+------------------------------------
+Total                          |  16
+
+$ python groceries.py -d water
+celery                         |   1
+apples                         |   4
+coffee                         |   5
+chicken                        |   6
+pizza (craving)                |   4
+------------------------------------
+Total                          |  20
+
+$ python groceries.py -d none
+Traceback (most recent call last):
+File "groceries.py", line 101, in
+    cart.delete(product)
+File "groceries.py", line 53, in delete
+    raise IndexError(f'{product} not in cart')
+IndexError: none not in cart
+
+$ python groceries.py -a bread
+usage: groceries.py [-h] [-a ADD ADD ADD | -d DELETE | -l | -s SEARCH]
+groceries.py: error: argument -a/--add: expected 3 arguments
+
+$ python groceries.py -ad
+usage: groceries.py [-h] [-a ADD ADD ADD | -d DELETE | -l | -s SEARCH]
+groceries.py: error: argument -a/--add: expected 3 arguments
+
+$ python groceries.py -dl
+Traceback (most recent call last):
+File "groceries.py", line 101, in
+    cart.delete(product)
+File "groceries.py", line 53, in delete
+    raise IndexError(f'{product} not in cart')
+IndexError: l not in cart
+
+$ python groceries.py -l -s
+usage: groceries.py [-h] [-a ADD ADD ADD | -d DELETE | -l | -s SEARCH]
+groceries.py: error: argument -s/--search: expected 1 argument
+
+$ python groceries.py -s -d
+usage: groceries.py [-h] [-a ADD ADD ADD | -d DELETE | -l | -s SEARCH]
+groceries.py: error: argument -s/--search: expected 1 argument
+
+</pre></p><p>Good luck and keep calm and code in Python!</p>
