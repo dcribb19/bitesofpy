@@ -144,8 +144,11 @@ def match_wine_5cheeses():
         top_5 = []
         for cheese in CHEESES:
             top_5.append((cheese, _similarity(wine, cheese)))
+        # sort ascending by name
         top_5 = sorted(top_5, key=itemgetter(0))
+        # sort descending by score
         top_5 = sorted(top_5, key=itemgetter(1), reverse=True)
+        # get top 5
         top_5 = [x[0] for x in top_5[:5]]
         pairings.append((wine, top_5))
     return pairings
