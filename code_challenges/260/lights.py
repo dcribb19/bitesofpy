@@ -23,16 +23,6 @@ class LightsGrid:
         x2, y2 = s2.split(',')
         return int(x1), int(y1), int(x2), int(y2)
 
-    def validate_grid(self):
-        """A helper function you might want to write to verify that:
-          - no lights are brighter than 5
-          - no lights are less than 0"""
-        if not (self.grid >= 0).all().all():
-            raise ValueError('Brightness cannot be less than 0.')
-        if not (self.grid <= 5).all().all():
-            raise ValueError('Brightness cannot be more than 5.')
-        return True
-
     def turn_on(self, s1: str, s2: str):
         """The turn_on function takes 2 parameters:
 
@@ -50,7 +40,7 @@ class LightsGrid:
         # Create a mask of all lights == 0 in the slice
         mask = new_df == 0
         # Turn on all lights that are off
-        switch = new_df.where(~mask, other=1, try_cast=True)
+        switch = new_df.where(~mask, other=1)
         # Overwrite the grid with the new values
         self.grid.update(switch)
         self.grid = self.grid.astype(int)
@@ -69,7 +59,7 @@ class LightsGrid:
         # Create a mask of all lights != 0 in the slice
         mask = new_df != 0
         # Turn off all lights that are on
-        switch = new_df.where(~mask, other=0, try_cast=True)
+        switch = new_df.where(~mask, other=0)
         # Overwrite the grid with the new values
         self.grid.update(switch)
         self.grid = self.grid.astype(int)
@@ -89,7 +79,6 @@ class LightsGrid:
         new_df = self.grid.iloc[x1:x2 + 1, y1:y2 + 1]
         # Add amount to slice
         new_df = new_df + amount
-        # Validate
         # Create a mask of all lights > 5 in the slice
         mask = new_df > 5
         switch = new_df.where(~mask, other=5)
@@ -109,9 +98,8 @@ class LightsGrid:
         x1, y1, x2, y2 = self.process_grid_coordinates(s1, s2)
         # Extract the slice of the grid into a new dataframe
         new_df = self.grid.iloc[x1:x2 + 1, y1:y2 + 1]
-        # Add amount to slice
+        # Subtrace amount from slice
         new_df = new_df - amount
-        # Validate
         # Create a mask of all lights < 0 in the slice
         mask = new_df < 0
         switch = new_df.where(~mask, other=0)
