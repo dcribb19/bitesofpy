@@ -1,0 +1,35 @@
+<p>To this point in the Pandas learning path we have just looked at Series. DataFrames are only a small step up in complexity. Instead of looking at Column A of your Excel Spreadsheet, we are now going to look at multiple columns of data.</p>
+
+<p>Before we start, time for some Pandas revision. This introductory tutorial on Pandas DataFrames, <a href="https://www.learndatasci.com/tutorials/python-pandas-tutorial-complete-introduction-for-beginners/" target="_blank">Python Pandas Tutorial: A Complete Introduction for Beginners</a>, is, in my opinion, one of the best there is out there. So, rather then spend time reinventing the wheel, if you are still learning about Pandas you should take an hour and read this tutorial start to end and follow along. You really will <em>nearly</em> learn everything you need to know for this Bite. And if that's not enough one of my favourite YouTube Python Vloggers has just startd a new <a href="https://www.youtube.com/playlist?list=PL-osiE80TeTsWmV9i9c58mdDCSskIFdDS" target="_blank">Pandas Tutorials Series</a>. Might not have the information yet tht you'll need to complete this Bite but well worth watching now and in the future as more videos are added.</p>
+
+<h4 id="christmaslights">Christmas Lights</h4>
+
+<p>Full disclosure here. This Bite is based on a challenge that I completed on the excellent <a href="https://adventofcode.com/" target="_blank">Advent of Code</a> Site. If you want to tackle the original, it appeared on Day 06, 2015.</p>
+
+<p>The basic premise for this Bite is that you are to create a customisable square grid of light. You are given instuructions to: <ol>
+<li>Create a grid of the given size (always the first instruction and lights are always initially off)</li>
+<li>Turn on specified lights (initially turn them on at intensity 1)</li>
+<li>Turn off specified lights (set to 0)</li>
+<li>Turn up specified lights by given amount (lights max out at 5)</li>
+<li>Turn down specified lights by given amount (don't go below 0)</li>
+<li>Toggle lights (on lights to off, off lights to intensity 3)</li>
+<li>Turning on a light that is already on does nothing, the intensity does not change</li>
+<li>Turning off a light that is already off has no affect on the light</li>
+</ol></p>
+
+<p>Some other details you'll require: <ul>
+<li>The grid is 0 indexed so, for example if you are asked to created a grid of size 5 the row indexes are [0, 1, 2, 3, 4] and likewise the column indexes are also [0, 1, 2, 3, 4]</li>
+<li>The top left corner of the 5 x 5 grid above is position (0, 0). The bottom right hand corner of the grid is position (4, 4). The middle light in the grid is position (2, 2)</li>
+<li>When parsing an instruction, the lights to apply the operation to are given in (top left position, bottom right position). So, for example, if the instruction is "turn on 1,1 through 3,3" then the 9 lights in the center of the grid are turned on at intensity 1</li>
+<li>The top row of the lights is referred to as "0,0 through 0,4</li>
+<li>The middle column of the lights is referred to as "0,2 through 4,2" </li>
+<li>The previous two points might seem counter intuitive but believe me, it should help you to think like this. Don't think x,y coordinates, think row and columns. For example think of "turn up 3 0,2 through 4,2" as turn up 3 row 0 column 2 through row 4 column 2</li>
+</ul></p>
+
+<p>The Test Cases will contain some sample lists of instructions for you to play with but the primary challenge is to take the list of given instructions and run <code>main</code> and get the same answer I do, <strong>12317</strong>.</p>
+
+<p>Here are some example instructions and their cumlulative affect on a small grid of lights.</p>
+
+<p><img src="https://bites-data.s3.us-east-2.amazonaws.com/lights_samples.png" alt="lights samples" width="400"/></p>
+
+<p>This example above is given as one of the test cases.</p>
