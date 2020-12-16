@@ -23,6 +23,10 @@ class LightsGrid:
         x2, y2 = s2.split(',')
         return int(x1), int(y1), int(x2), int(y2)
 
+    def _update_grid(self, df):
+        self.grid.update(df)
+        self.grid = self.grid.astype(int)
+
     def turn_on(self, s1: str, s2: str):
         """The turn_on function takes 2 parameters:
 
@@ -42,8 +46,7 @@ class LightsGrid:
         # Turn on all lights that are off
         switch = new_df.where(~mask, other=1)
         # Overwrite the grid with the new values
-        self.grid.update(switch)
-        self.grid = self.grid.astype(int)
+        self._update_grid(switch)
 
     def turn_off(self, s1: str, s2: str):
         """The turn_off function takes 2 parameters:
@@ -61,8 +64,7 @@ class LightsGrid:
         # Turn off all lights that are on
         switch = new_df.where(~mask, other=0)
         # Overwrite the grid with the new values
-        self.grid.update(switch)
-        self.grid = self.grid.astype(int)
+        self._update_grid(switch)
 
     def turn_up(self, amount: int, s1: str, s2: str):
         """The turn_up function takes 3 parameters:
@@ -82,8 +84,7 @@ class LightsGrid:
         # Create a mask of all lights > 5 in the slice
         mask = new_df > 5
         switch = new_df.where(~mask, other=5)
-        self.grid.update(switch)
-        self.grid = self.grid.astype(int)
+        self._update_grid(switch)
 
     def turn_down(self, amount: int, s1: str, s2: str):
         """The turn down function takes 3 parameters:
@@ -103,8 +104,7 @@ class LightsGrid:
         # Create a mask of all lights < 0 in the slice
         mask = new_df < 0
         switch = new_df.where(~mask, other=0)
-        self.grid.update(switch)
-        self.grid = self.grid.astype(int)
+        self._update_grid(switch)
 
     def toggle(self, s1: str, s2: str):
         """The toggle function takes 2 parameters:
@@ -127,8 +127,7 @@ class LightsGrid:
         # Set all lights that are off to 3 in the slice
         switch_on = switch_off.where(mask, other=3)
         # Finally overwrite the grid with the new values
-        self.grid.update(switch_on)
-        self.grid = self.grid.astype(int)
+        self._update_grid(switch_on)
 
     def follow_instructions(self):
         """Function to process all instructions.
