@@ -84,6 +84,7 @@ class LightsGrid:
         # Create a mask of all lights > 5 in the slice
         mask = new_df > 5
         switch = new_df.where(~mask, other=5)
+        # Overwrite the grid with the new values
         self._update_grid(switch)
 
     def turn_down(self, amount: int, s1: str, s2: str):
@@ -99,11 +100,12 @@ class LightsGrid:
         x1, y1, x2, y2 = self.process_grid_coordinates(s1, s2)
         # Extract the slice of the grid into a new dataframe
         new_df = self.grid.iloc[x1:x2 + 1, y1:y2 + 1]
-        # Subtrace amount from slice
+        # Subtract amount from slice
         new_df = new_df - amount
         # Create a mask of all lights < 0 in the slice
         mask = new_df < 0
         switch = new_df.where(~mask, other=0)
+        # Overwrite the grid with the new values
         self._update_grid(switch)
 
     def toggle(self, s1: str, s2: str):
@@ -118,15 +120,15 @@ class LightsGrid:
         """
         # Process grid coordinates
         x1, y1, x2, y2 = self.process_grid_coordinates(s1, s2)
-        # First extract the slice of the grid into a new dataframe
+        # Extract the slice of the grid into a new dataframe
         new_df = self.grid.iloc[x1:x2 + 1, y1:y2 + 1]
-        # Now create a mask of all lights > 0 in the slice
+        # Create a mask of all lights > 0 in the slice
         mask = new_df > 0
-        # Now turn off all lights that are on in the slice
+        # Turn off all lights that are on in the slice
         switch_off = new_df.where(~mask, other=0)
         # Set all lights that are off to 3 in the slice
         switch_on = switch_off.where(mask, other=3)
-        # Finally overwrite the grid with the new values
+        # Overwrite the grid with the new values
         self._update_grid(switch_on)
 
     def follow_instructions(self):
