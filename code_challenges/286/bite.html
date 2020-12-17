@@ -1,0 +1,9 @@
+<p>Write a function, called <code>decompress()</code>, that accepts a string and a dictionary as input.</p>
+<p>The dictionary maps special character strings to sequences of characters.</p>
+<p>The function goes through the argument string and if the character is in the dictionary, it converts it to the corresponding character sequence.&nbsp;&nbsp;</p>
+<p>Example:</p>
+<pre>&gt;&gt;&gt; table = {'$': 's',<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'%': 'y',<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'/': 't'<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br /><br />&gt;&gt;&gt; decompress('P%Bi/e$', table)&nbsp;<br />'PyBites'</pre>
+<p><strong>Note</strong>&nbsp;that a special character may map to a sequence of characters that ALSO has a special character in it.&nbsp;&nbsp;</p>
+<p>Example:</p>
+<pre>&gt;&gt;&gt; table = {'*': 'c',<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'#': '00',<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'$': '*y',<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br /><br />&gt;&gt;&gt; decompress('$3#', table)<br />'cy300'</pre>
+<p>For example the symbol table maps <code>$</code> to the string <code>*y</code> and <code>*</code> maps to <code>c</code>.</p>
