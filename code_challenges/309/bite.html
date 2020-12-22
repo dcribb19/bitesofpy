@@ -1,0 +1,19 @@
+<p>When we want to transform our data often, <em>method chaining</em> is a wonderful paradigm that allows us to write elegant and less error-prone code.</p>
+<p>For example, given a string <code>s</code>, we can do the following in Python <code><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">s.strip().lower().split()</span></code>.</p>
+<p>When working with databases, we often have code snippets like the next one:</p>
+<pre>session.query(Engineer).\<br />  &nbsp; filter(Engineer.id == Employee.id).\<br />  &nbsp; filter(Employee.name == 'dilbert').\<br />&nbsp; &nbsp; delete()</pre>
+<p>Implementing method chaining is not hard, although there are at least&nbsp;two different ways of achieving this functionality.</p>
+<p>Now it's your turn to try it out.</p>
+<h3>Tasks</h3>
+<p>In this Bite you are asked to implement a simple document class&nbsp;that can be used to create text documents.</p>
+<p>For this Bite, a document is a list of strings,&nbsp;each string representing exactly one line.</p>
+<p>The order in the list is the order of the document.&nbsp;Indices start at 0.</p>
+<p>However, because working with documents basically means&nbsp;a lot of repeated function calls,&nbsp;you want to provide at least some convenience by offering <a href="https://stackoverflow.com/questions/41817578/basic-method-chaining" target="_blank" rel="noopener">method chaining</a>.</p>
+<p>Be aware that there are (at least) two ways to achieve method chaining and&nbsp;you can choose which one you want to implement here. Both will pass the tests.</p>
+<p>With method chaining it is easy to execute multiple transformations of a document at once:</p>
+<pre>d = (<br />  &nbsp; Document()<br />  &nbsp; .add_line("My first sentence.")<br />  &nbsp; .add_line("My second sentence.")<br />  &nbsp; .add_line("Introduction", 0)<br />  &nbsp; .merge_lines([1,2])<br />)<br />print(d)<br />&gt;&gt;&gt; Introduction<br />&gt;&gt;&gt; My first sentence. My second sentence<br />print(len(d))<br />&gt;&gt;&gt; 2<br />print(d.word_count())<br />&gt;&gt;&gt; 7<br />print(d.words)<br />&gt;&gt;&gt; ['first', 'introduction', 'my', 'second', 'sentence']</pre>
+<p>We provided you with a skeleton of a <code>Document</code> class that offers typical methods&nbsp;for manipulating documents.&nbsp;</p>
+<p>For this bite, we only consider methods that change whole lines,&nbsp;which makes things a lot easier.</p>
+<p>Feel free to add more methods to your liking.</p>
+<p>If you wonder why there is no method for undoing the last action,&nbsp;stay tuned for another Bite!</p>
+<p>Happy coding.</p>
