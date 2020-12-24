@@ -38,7 +38,7 @@ def rent_or_stream(
     r_or_s: Dict[str, str] = {}
     for month, rent in monthly_rent.items():
         total_rent = sum(rent)
-        if total_rent > STREAMING_COST_PER_MONTH:
+        if total_rent > streaming_cost_per_month:
             r_or_s[month] = STREAM
         else:
             r_or_s[month] = RENT
