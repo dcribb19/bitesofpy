@@ -1,0 +1,15 @@
+<p>Proteins fulfill important functions in all organisms and consist of amino acids linked together in a specific order.</p>
+<p>Although single changes of these amino acids can have devastating effects on the protein function, not all changes carry the same severity. The impact is largely influenced by the chemical and physical properties of the substituted amino acid.</p>
+<p>But how can differences in proteins be quantified? An efficient way to calculate similarity is the use of <a href="https://en.wikipedia.org/wiki/Substitution_matrix" target="_blank" rel="noopener">scoring matrices</a>.</p>
+<p>In this Bite you will use <a href="https://en.wikipedia.org/wiki/BLOSUM" target="_blank" rel="noopener">BLOSUM</a> and <a href="https://en.wikipedia.org/wiki/Point_accepted_mutation" target="_blank" rel="noopener">PAM matrices</a> to<span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">&nbsp;calculate protein similarity scores.</span></p>
+<p>The score is calculated by summing up all the values from the scoring matrix for each paired amino acid. Each amino acid is represented by a&nbsp;<a href="https://en.wikipedia.org/wiki/Proteinogenic_amino_acid#Chemical_properties" target="_blank" rel="noopener">different letter</a> <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">(e.g. A stands for <em>a</em>lanine, R for a<em>R</em>ginine ...)</span></p>
+<p>Consider the following scoring matrix:</p>
+<pre>BLOSUM62 (excerpt): </pre>
+<pre>  |&nbsp; A  R&nbsp;  N&nbsp;  D&nbsp; &nbsp;C&nbsp;  Q&nbsp; [...]</pre>
+<pre>--+-----------------------<br />A |&nbsp; 4 -1&nbsp; -2&nbsp; -2&nbsp; &nbsp;0&nbsp; -1&nbsp; [...]<br />R | -1&nbsp; 5&nbsp; &nbsp;0&nbsp; -2&nbsp; -3&nbsp; &nbsp;1&nbsp; [...]<br />[...]</pre>
+<p>To calculate the BLOSUM62 similarity score between two sequences Seq1 and Seq2, the sequences are aligned and the&nbsp;individual scores for each amino acid are added up as follows:</p>
+<pre>Seq1&nbsp; &nbsp; &nbsp;A&nbsp; R&nbsp; R&nbsp; N&nbsp; C&nbsp; Q&nbsp; A<br />Seq2&nbsp; &nbsp; &nbsp;A&nbsp; A&nbsp; R&nbsp; R&nbsp; A&nbsp; A&nbsp; A<br />------ ----------------------<br />Score&nbsp; &nbsp; 4 -1&nbsp; 5&nbsp; 0&nbsp; 0 -1&nbsp; 4&nbsp; --&gt; SUM == 11</pre>
+<p><code>matrix_score()</code> therefore returns <code>11</code> in this example.</p>
+<p>Todo:<br /><br />- Implement a general matrix score calculator for amino acid sequences using the provided matrices.<br /><br />- Implement a custom error class <code>AminoAcidNotFoundError</code> in the <code>matrix_score</code>&nbsp;function to address non existent pairs (see tests for more information).</p>
+<p>- Write a function that returns the sequence(s) of the most closely related (highest score) amino acid sequence.<br /><br /><strong>Note</strong>: For this bite you can assume that all sequences are already properly aligned.</p>
+<p>&nbsp;</p>
