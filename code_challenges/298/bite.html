@@ -1,0 +1,10 @@
+<p>A very simple format to store biological sequence data is the (multi-)FASTA format.</p>
+<p>The first line of each record starts with a &gt; character and is followed by a name. The following lines&nbsp;contain the sequence information. A record ends when &gt; character or the end of the file is encountered.</p>
+<p>FASTA files downloaded from public databases such as the <a href="https://www.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">National Center for&nbsp;Biotechnology Information (NCBI)</a> often contain line breaks after 60-80 characters which ensures sequences are not truncated in text editors.</p>
+<p>However in many cases (think *nix command line tools, <code>grep</code>, <code>wc</code>,&nbsp;etc.), it is better if each sequence is exactly one line long.</p>
+<p>Your job is to convert a multiline FASTA file to a 2-Line FASTA file.</p>
+<h3>Multiline FASTA format:</h3>
+<pre>&gt;Sequence 1:<br />ATGTCGGAAAAAGAAATTTGGGAAAAAGTGCTTGA<br />AATTGCTCAAGAAAAATTATCAGCTGTAAGTTACT<br />[...]<br />&gt;Sequence 2:<br />ATGATGGAATTCACTATTAAAAGAGATTATTTTAT<br />TACACAATTAAATGACACATTAAAAGCTATTTCAC<br />[...]</pre>
+<h3>2-Line FASTA format:</h3>
+<pre>&gt;Sequence 1:<br />ATGTCGGAAAAAGAAATTTGGGAAAAAGTGCTTGAAATTGCTCAAGAAAAATTATCAGCTGTAAGTTACT[...]<br />&gt;Sequence 2:<br />ATGATGGAATTCACTATTAAAAGAGATTATTTTATTACACAATTAAATGACACATTAAAAGCTATTTCAC[...]</pre>
+<p>This Bite has <a href="https://biopython.org/" target="_blank" rel="noopener">biopython</a> enabled (check out module <code>Bio.SeqIO</code>'s <code>convert</code> function), but it can also be solved without this module.</p>
