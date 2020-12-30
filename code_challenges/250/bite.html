@@ -1,0 +1,64 @@
+<p><strong>URL shortening</strong> is a technique on the World Wide Web in which a Uniform Resource Locator (URL) may be made substantially shorter and still direct to the required page (<a href="https://en.wikipedia.org/wiki/URL_shortening" target="_blank">Wikipedia</a>). Let's build one for PyBites!</p>
+<p>You would think that there is some complex math involved here, but that's not really what's going on. The only thing that's encoded is the database record ID of the URL entry.</p>
+<p>Since we're only interested in encoding <code>0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</code> we will be encoding the values into <em>Base62</em>. Why 62? Well because if you add up all of those characters, they total 62! If you wanted to use other symbols, that would be a great exercise for you to expand on what you learn here.</p>
+<p>If you don't know how to encode numbers into other base formats, here's a quick little tutorial: <pre>
+# encode(100):
+num = 100
+# num % base62
+remainder = 100 % 62 = 38
+# codex[remainder]
+result = codex[38]  # "C"
+
+# floor(num / base62)
+queue = floor(100 / 62)  # 1
+
+while queue:
+    # queue % base62
+    remainder = 1 % 62  # 1
+    # floor(queue / base62)
+    queue = floor(1 / 62)  # 0
+    # codex[remainder] + result
+    result = codex[1] + "C"  # "1C"
+return result
+
+# decode("1C")
+value = 0
+for char in result:
+    # first pass char = 1
+        # value = base62 * value + codex.find(char)
+        # value = 62 * 0 + codex.find("1")
+        # value = 0 + 1
+    value = 1
+    # second pass char = C
+        # value = base62 * value + codex.find(char)
+        # value = 62 * 1 + codex.find("C")
+        # value = 62 + 38
+    value = 100
+return value
+</pre></p>
+<p>Instead of using an SQL database or something like that, for this Bite we'll just be using the <code>LINKS</code> dictionary. I've provided some code to get you started, but you'll have to complete the following functions: <ul>
+<li><code>encode</code>: Encodes the number passed into <em>Base62</em></li>
+<li><code>decode</code>: Decodes the string passed back into <em>Base10</em></li>
+<li><code>redirect</code>: Takes a shortened URL and returns the URL stored in <em>LINKS</em><ul>
+    <li>Verifies that domain of shortened url is from <em>https://pybit.es</em>, if not returns error message <code>INVALID</code></li>
+    <li>Checks to see if the record exists, if not return error message <code>NO_RECORD</code></li>
+    <li>Returns the stored <em>URL</em></li>
+</ul></li>
+<li><code>shorten_url</code>: Shortens the URL and updates <em>LINKS</em><ul>
+    <li>Encodes the <code>next_record</code> passed to it</li>
+    <li>Adds the URL to <em>LINKS</em></li>
+    <li>Returns the shortened URL</li>
+  </ul>
+</li></ul></p>
+<p>And apart from the included tests, here you can see it in action in the REPL:<pre>
+>>> from url_shortener import encode, decode, redirect, shorten_url
+>>> encode(5120)
+'1kA'
+>>> decode('1kA')
+5120
+>>> shorten_url("https://python.org", 7000)
+'https://pybit.es/1OU'
+>>> redirect('https://pybit.es/1OU')
+'https://python.org'
+</pre></p>
+<p>An URL shortener is a pretty useful service to provide, so let's give it a shot. Have fun and keep calm and code in Python!</p>
