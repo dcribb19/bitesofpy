@@ -10,6 +10,7 @@ def get_random_number():
     """Get a random number between START and END, returns int"""
     return random.randint(START, END)
 
+
 @dataclass
 class Game:
     """Number guess class, make it callable to initiate game"""
@@ -27,31 +28,23 @@ class Game:
            If all good, return the int"""
         num = input(f'Guess a number between {START} and {END}:')
 
-        while not isinstance(num, int):
-            if not num:
-                print('Please enter a number')
-                num = input(f'Guess a number between {START} and {END}:')
-            else:
-                try:
-                    num = int(num)
-                except ValueError:
-                    print('Should be a number')
-                    num = input(f'Guess a number between {START} and {END}:')
-
-        if not START <= num <= END:
-            print('Number not in range')
-        elif num in self._guesses:
-            print('Already guessed')
+        if not num:
+            raise ValueError('Please enter a number')
         else:
-            self._guesses.add(num)
-            return num
+            try:
+                num = int(num)
+            except ValueError:
+                raise ValueError('Should be a number')
+            if not START <= num <= END:
+                raise ValueError('Number not in range')
+            elif num in self._guesses:
+                raise ValueError('Already guessed')
+            else:
+                self._guesses.add(num)
+                return num
 
     def _validate_guess(self, guess: int) -> bool:
-        """Verify if guess is correct, print the following when applicable:
-           {guess} is correct!
-           {guess} is too low
-           {guess} is too high
-           Return a boolean"""
+        """Verify if guess is correct"""
         if guess == self._answer:
             print(f'{guess} is correct!')
             self._win = True
@@ -69,11 +62,18 @@ class Game:
         while True:
             guess = None
             while not guess:
-                guess = self.guess()
+                try:
+                    guess = self.guess()
+                except ValueError as e:
+                    print(e)
+
             self._validate_guess(guess)
 
             if self._win:
-                print(f'It took you {len(self._guesses)} guesses')
+                if len(self._guesses) == 1:
+                    print(f'It took you {len(self._guesses)} guess')
+                else:
+                    print(f'It took you {len(self._guesses)} guesses')
                 break
             elif len(self._guesses) == MAX_GUESSES:
                 print((f'Guessed {MAX_GUESSES} times, '

@@ -1,0 +1,49 @@
+<p>In this Bite you implement a <code>Game</code> class to perform a number guessing game. It lets a user do a max of 5 guesses of a secret number between 1 and 20 randomly defined by the class.</p><p>Note you have to account for invalid inputs: raise a <code>ValueError</code> if a user hits Enter (nothing entered), a non-numeric value, a number that is not in the 1-20 range, or guesses the same number again. See the template code below ... (<i>Advanced</i> Bite,
+ not giving away too much!)</p><p>The tests run through a lose scenario as well. Note they mock out the <code>input</code> builtin to test this. And you will be tested on <i>stdout</i> too so use <code>print</code> statements in addition to return values. Here is how the program would work from the command line:</p>
+<p>Guessed it (note wrong input does not count towards number of guesses):<pre>
+    $ python guess.py
+    Guess a number between 1 and 20:
+    Please enter a number
+    Guess a number between 1 and 20: string
+    Should be a number
+    Guess a number between 1 and 20: 5
+    5 is too low
+    Guess a number between 1 and 20: 15
+    15 is too high
+    Guess a number between 1 and 20: 10
+    10 is too high
+    Guess a number between 1 and 20: 8
+    8 is too high
+    Guess a number between 1 and 20: 6
+    6 is correct!
+    It took you 5 guesses
+</pre></p>
+<p>Guessed it - another example:<pre>
+    $ python guess.py
+    Guess a number between 1 and 20: -1
+    Number not in range
+    Guess a number between 1 and 20:
+    Please enter a number
+    Guess a number between 1 and 20: 8
+    8 is too high
+    Guess a number between 1 and 20: 10
+    10 is too high
+    Guess a number between 1 and 20: 4
+    4 is correct!
+    It took you 3 guesses
+</pre></p>
+<p>Did not guess it:<pre>
+    $ python guess.py
+    Guess a number between 1 and 20: 9
+    9 is too low
+    Guess a number between 1 and 20: 8
+    8 is too low
+    Guess a number between 1 and 20: 7
+    7 is too low
+    Guess a number between 1 and 20: 6
+    6 is too low
+    Guess a number between 1 and 20: 5
+    5 is too low
+    Guessed 5 times, answer was 16
+</pre></p>
+<p>Good luck, have fun and keep calm and code in Python!</p>
