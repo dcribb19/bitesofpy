@@ -1,0 +1,44 @@
+<p>You run a news site and you got feedback that people read more if articles are printed in 2 or more columns instead of long walls of text.</p><p>Oh no! There are 200 articles in the database that need to be reformatted!</p><p>The good news though is that you know Python so you decide to come up with a nice function to do this tedious work for you.</p><p>And that's where our Bite comes in: complete <code>text_to_columns</code> which takes a text and splits it into columns (<code>COL_WIDTH</code> is set to 20).</p><p>The amount of <strong>double newlines (\n\n)</strong> in the text decides how many columns there will be so we can assume you are delivered the text in this preformatted way.</p><p>It's best to show you some examples how this would work, see the examples here:</p>
+<p>1 paragraph == 1 columns:<pre>
+    text = """My house is small but cosy."""
+text_to_columns(text) produces:
+
+    My house is small
+    but cosy.
+</pre></p><p>2 paragraphs == 2 columns:<pre>
+
+    text = """My house is small but cosy.
+
+    It has a white kitchen and an empty fridge."""
+text_to_columns(text) produces:
+
+    My house is small         It has a white
+    but cosy.                 kitchen and an empty
+                              fridge.
+</pre></p><p>3 paragraphs == 3 columns:<pre>
+    text = """My house is small but cosy.
+
+    It has a white kitchen and an empty fridge.
+
+    I have a very comfortable couch, people love to sit on it."""
+text_to_columns(text) produces:
+
+    My house is small         It has a white            I have a very
+    but cosy.                 kitchen and an empty      comfortable couch,
+                              fridge.                   people love to sit
+                                                        on it.
+</pre></p><p>4 paragraphs == 4 columns:<pre>
+    text = """My house is small but cosy.
+
+    It has a white kitchen and an empty fridge.
+
+    I have a very comfortable couch, people love to sit on it.
+
+    My mornings are filled with coffee and reading, if only I had a garden"""
+text_to_columns(text) produces:
+
+    My house is small         It has a white            I have a very             My mornings are
+    but cosy.                 kitchen and an empty      comfortable couch,        filled with coffee
+                              fridge.                   people love to sit        and reading, if only
+                                                        on it.                    I had a garden
+</pre></p><p>Get to know the the standard library ... we reckon you probably want to leverage at least 2 modules for this. As this is an Advanced Bite we leave it at that. Good luck and have fun!</p>
