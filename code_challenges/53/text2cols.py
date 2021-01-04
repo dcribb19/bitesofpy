@@ -1,5 +1,6 @@
 from itertools import zip_longest
-from textwrap import TextWrapper
+from textwrap import TextWrapper, wrap
+import textwrap
 from typing import List
 
 COL_WIDTH = 20
@@ -54,6 +55,16 @@ def text_to_columns(text: str) -> str:
         print("I'm not quite sure how to scale this.")
 
 
+def alt_solution(text: str) -> str:
+    split_text = [textwrap.wrap(text, COL_WIDTH) for col in text.split('\n\n')]
+    lines = zip_longest(*split_text, fillvalue=' ')
+    return '\n'.join(
+        COL_SPACING.join(
+            f'{col:{COL_WIDTH}}' for col in line
+            ) for line in lines
+        )
+
+
 if __name__ == '__main__':
     text1 = """My house is small but cosy."""
     text2 = """My house is small but cosy.
@@ -66,5 +77,8 @@ if __name__ == '__main__':
     I have a very comfortable couch, people love to sit on it.
 
     My mornings are filled with coffee and reading, if only I had a garden"""
-    p = text_to_columns(text2)
+    p = text_to_columns(text4)
     print(p)
+
+    alt = text_to_columns(text4)
+    print(alt)
