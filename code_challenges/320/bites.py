@@ -10,14 +10,11 @@ class BiteLevel(IntEnum):
     ADVANCED = 4
 
 
-@dataclass
+@dataclass(order=True)
 class Bite:
     number: int
     title: str
     level: BiteLevel
-
-    def __lt__(self, other) -> bool:
-        return self.number < other.number
 
 
 def create_bites(numbers: List[int],
