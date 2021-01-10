@@ -1,0 +1,7 @@
+<p>In this bite, you are going to get familiar with symmetrical encryption using the cryptography module and its <a href="https://cryptography.io/en/latest/fernet/" target="_blank">Fernet class</a>. A quick online search should get you up to speed on how to use it, but here's a quick run down:</p>
+
+<p>We are going to be using a password with Fernet, so we will need to run it through some sort of key deriving function like PBKDF2HMAC, bcrypt or Scrypt. I will be using <a href="https://cryptography.io/en/latest/hazmat/primitives/key-derivation-functions/#cryptography.hazmat.primitives.kdf.pbkdf2.PBKDF2HMAC" target="_blank">PBKDF2HMAC</a>, so read up on how to derive a key with it.</p>
+
+<p>Once you have the key, you will need to <a href="https://www.base64encoder.io/python/">urlsafe base64 encode</a> it. This is what you will pass to the Fernet class when initializing it. Once you've done that, you will be able to encrypt and decrypt any text/phrase that you pass to it.</p>
+
+<p>Further details can be found on the link that was provided for Fernet above.</p>
