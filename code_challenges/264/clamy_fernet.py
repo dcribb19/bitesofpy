@@ -1,5 +1,6 @@
 import base64
 from cryptography.fernet import Fernet
+from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 from dataclasses import dataclass
@@ -28,6 +29,7 @@ class ClamyFernet:
     length: int = 32
     salt: str = urandom(16)
     iterations: int = 100000
+    backend = default_backend()
 
     def __post_init__(self):
         if not self.key:
@@ -45,6 +47,7 @@ class ClamyFernet:
                 length=self.length,
                 salt=self.salt,
                 iterations=self.iterations,
+                backend=self.backend
             )
         return kdf
 
@@ -54,8 +57,6 @@ class ClamyFernet:
 
         Key that is derived from cryptogrophy's fermet.
         """
-        if not self.key:
-            self.key = Fernet.generate_key()
         return Fernet(self.key)
 
     def encrypt(self, message: str) -> ByteString:
