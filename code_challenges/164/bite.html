@@ -1,0 +1,26 @@
+<p>In this Bite you are going to help your team out automating a boring task.</p> <p>They reached out to you with some data files that contain lines of <i>(link_href, link_name)</i>. Unfortunately they also contain bad data.</p><p>The additional requirement is that your script can receive piped output from another process (read on ...)</p><p>Code up <code>make_html_links</code> that reads in data from stdin (use <code>sys</code>) and converts it to proper HTML:<ul> <li>Ignore the bad lines (no <i>http</i> in line, more than one comma, etc),</li><li>Strip white spaces around <i>link_href</i> and <i>link_name</i>,</li> <li>Final twist: if the domain is NOT <i>pybit.es</i> or <i>codechalleng.es</i> make it an external link by adding <i>target="_blank"</i> to the resulting HTML.</li> <li>Make the function <strong>print</strong> to standard output, don't return anything. The tests run your code as below and hence check standard output!</li></ul> </p><p>Running your program, which is automatically saved in a module called <code>links.py</code>, it should work like this:<pre>
+$ cat data1
+https://www.python.org, Python Homepage
+bad data,blabla,123
+https://pybit.es/generators.html , Generators are Awesome
+more bad data
+
+$ cat data1|python links.py
+&lt;a href="https://www.python.org" target="_blank">Python Homepage&lt;/a&gt;
+&lt;a href="https://pybit.es/generators.html">Generators are Awesome&lt;/a&gt;
+
+$ cat data2
+bogus data, again
+https://codechalleng.es/bites/ , Bites of Py
+https://stackoverflow.com/a/12927564,How to capture subprocess.call stdout
+https://pybit.es/,Our labor of love
+https://pybit.es/pages/about.html, About Us
+https://nu.nl, Dutch news site
+
+$ cat data2|python links.py
+&lt;a href="https://codechalleng.es/bites/">Bites of Py&lt;/a&gt;
+&lt;a href="https://stackoverflow.com/a/12927564" target="_blank">How to capture subprocess.call stdout&lt;/a&gt;
+&lt;a href="https://pybit.es/">Our labor of love&lt;/a&gt;
+&lt;a href="https://pybit.es/pages/about.html">About Us&lt;/a&gt;
+&lt;a href="https://nu.nl" target="_blank">Dutch news site&lt;/a&gt;
+</pre></p><p>Pretty cool/useful, no? Make your team happy and increase your coding ninja reputation in your org ;) - have fun and keep calm and code in Python!</p>
