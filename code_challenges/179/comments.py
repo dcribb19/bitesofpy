@@ -11,7 +11,7 @@ def strip_comments(code: str) -> str:
     new_code = re.sub(r'# .*', ' ', code)
 
     # single line docstrings
-    doc_strings = re.findall(r'""".*"""', new_code, re.MULTILINE)
+    doc_strings = re.findall(r'""".*"""', new_code)
     for line in doc_strings:
         if line in new_code:
             new_code = new_code.replace(line, ' ')
