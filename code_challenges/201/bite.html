@@ -1,0 +1,17 @@
+<p>Cisco Nexus 9k devices is one of the first network equipment with comprehensive API programmatic access from Cisco. API capabilities might be familiar to developers working with web apps but they are new to network engineers.</p>
+<p>In this Bite we will practice making API calls to the Cisco Nexus device and retrieve information from it. The focus of the Bite is on the HTTP header requirements, the API request body, and general interaction between Python scripts and network devices.</p>
+<p>You can find more information about the Cisco Nexus API in the following links:<ul>
+<li><a href="https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/92x/programmability/guide/b-cisco-nexus-9000-series-nx-os-programmability-guide-92x/b-cisco-nexus-9000-series-nx-os-programmability-guide-92x_chapter_010011.html" target="_blank">NX-API CLI</a></li>
+<li><a href="https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/92x/programmability/guide/b-cisco-nexus-9000-series-nx-os-programmability-guide-92x/b-cisco-nexus-9000-series-nx-os-programmability-guide-92x_chapter_010100.html" target="_blank">NX-API REST</a></li>
+<li><a href="https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/92x/programmability/guide/b-cisco-nexus-9000-series-nx-os-programmability-guide-92x/b-cisco-nexus-9000-series-nx-os-programmability-guide-92x_chapter_010110.html" target="_blank">NX-API Developer Sandbox</a></li>
+</ul></p>
+<p>We are going to make an API call to a Cisco Nexus 9k device using the <code>requests</code> library and parse out the returned output for the current NX-OS version.</p>
+<p>The call format will be json-rpc with the command type being cli.</p>
+<p>The remote device is an always-on lab device provided by Cisco DevNet:<ul>
+<li>Nexus 9000v Host : <b>sbx-nxos-mgmt.cisco.com</b>
+<li>NXAPI Ports: <b>443</b> (HTTPS)</li>
+<li>Username: <b>admin</b></li>
+<li>Password: <b>Admin_1234!</b></li>
+</ul></p>
+<p><strong>Note:</strong> due to the current setup, you can use the <code>verify=False</code> <i>kwarg</i> in your <code>requests post</code>.</p>
+<p>Good luck and code more Python!</p>
