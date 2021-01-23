@@ -1,0 +1,21 @@
+<p>Imagine you built PyBites' new translation feature. You managed to successfully get translated text for a Bite, but there's a problem: the Python code inside the HTML <code>code</code> and <code>pre</code> tags gets translated too (yes, this actually happened to us!). Nobody ever said developer life was going to be easy right? (chuckle)</p>
+
+<p>As we code in English, we require all code snippets to be in English even if the overall Bite description is being translated to another language.</p>
+
+<p>Luckily, by now, you've mastered some text manipulation and regex skills (this is an advanced Bite after all) so you will write some code to fix this for all future translation calls.</p>
+
+<p>Here is a small example (we test 3 different ones in the associated tests):</p>
+
+<p>Original English Bite text:</p>
+
+<p><img src="https://bites-data.s3.us-east-2.amazonaws.com/trans-org-text.png" alt="original English Bite text"></p>
+
+<p>Translator output which translated everything, description and code, to Russian:</p>
+
+<p><img src="https://bites-data.s3.us-east-2.amazonaws.com/trans-brute-force.png" alt="result of translator call"></p>
+
+<p>You will take both output instances and produce the desired output: the description is in Russian while the code content in the <code>code</code> and <code>pre</code> tags is left intact (English):</p>
+
+<p><img src="https://bites-data.s3.us-east-2.amazonaws.com/trans-fixed.png" alt="translation text fixed by your code"></p>
+
+<p>Good luck and keep calm and code in Python.</p>
