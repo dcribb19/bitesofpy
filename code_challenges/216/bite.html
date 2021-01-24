@@ -1,0 +1,24 @@
+<p>Write a regular expression to extract 4 pieces of information from an email header:</p> <ul> <li><i>From</i> email</li> <li><i>To</i> email</li> <li><i>Subject</i></li> <li><i>Date</i> sent (without timezone info)</li> </ul> <p>Use <code>re.match</code> or <code>re.search</code> and <i>capturing parenthesis</i>. Return the captured <code>groupdict</code> of the <i>match</i> object.</p><p>Here is an example how it would work (email header found <a href="https://gist.github.com/sendgrid-gists/81feae0028800960c3b7945e34e9b5cf">here</a> - we use another made up one in the tests):</p> <pre>
+>>> header = """Return-Path: <bounces+5555-7602-redacted-info>
+... ...
+... Received: by 10.8.49.86 with SMTP id mf9.22328.51C1E5CDF
+...     Wed, 19 Jun 2013 17:09:33 +0000 (UTC)
+... Received: from NzI3MDQ (174.37.77.208-static.reverse.softlayer.com [174.37.77.208])
+... by mi22.sendgrid.net (SG) with HTTP id 13f5d69ac61.41fe.2cc1d0b
+... for <redacted-info>; Wed, 19 Jun 2013 12:09:33 -0500 (CST)
+... Content-Type: multipart/alternative;
+... boundary="===============8730907547464832727=="
+... MIME-Version: 1.0
+... From: redacted-address
+... To: redacted-address
+... Subject: A Test From SendGrid
+... Message-ID: <1371661773.974270694268263@mf9.sendgrid.net>
+... Date: Wed, 19 Jun 2013 17:09:33 +0000 (UTC)
+... X-SG-EID: P3IPuU2e1Ijn5xEegYUQ...
+... X-SendGrid-Contentd-ID: {"test_id":"1371661776"}"""
+>>> 
+>>> from email_header import get_email_details
+>>> get_email_details(header)
+{'from': 'redacted-address', 'to': 'redacted-address', 'subject': 'A Test From SendGrid',
+ 'date': 'Wed, 19 Jun 2013 17:09:33'}
+</pre> <p>Enjoy and keep calm and code in Python!</p>
