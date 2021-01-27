@@ -1,0 +1,30 @@
+<p>You added some monitoring the other day writing log files to a directory. In this Bite you will zip up the latest ones renaming the files to include the creation date. Ready to learn some <code>pathlib</code>, <code>Zipfile</code> and a bit of <code>datetime</code> goodness?</p>
+
+<p>Complete <code>zip_last_n_files</code> that takes a <code>directory</code> (<code>Path</code> object), a <code>zip_file</code> output filename (<code>str</code>) and n (<code>int</code>) = the amount files to include in the zipfile. You zip up the last N log files to a zipfile in the current working directory. The files need to include their creation date (<code>%Y-%m-%d</code>, e.g. <i>2019-10-30</i>).</p>
+
+<p>Here is an example how it should work. Given this directory (files sorted ascending by creation timestamp):<pre>
+$ ls -lrth /tmp/logs/
+total 0
+-rw-r--r--  1 bobbelderbos  wheel     0B Oct 30 23:16 file4.log
+-rw-r--r--  1 bobbelderbos  wheel     0B Oct 30 23:16 file3.log
+-rw-r--r--  1 bobbelderbos  wheel     0B Oct 30 23:16 file2.log
+-rw-r--r--  1 bobbelderbos  wheel     0B Oct 30 23:16 file5.log
+-rw-r--r--  1 bobbelderbos  wheel     0B Oct 30 23:17 file7.log
+-rw-r--r--  1 bobbelderbos  wheel     0B Oct 30 23:17 file6.log
+-rw-r--r--  1 bobbelderbos  wheel     0B Oct 31 00:10 file1.log
+</pre></p>
+
+<p>Your code should produce a zipfile with the last N (here = 3) files. (Note the renamed file names!)<pre>
+&gt;&gt;&gt; from pathlib import Path
+&gt;&gt;&gt; from zipfile import ZipFile
+&gt;&gt;&gt; from files import zip_last_n_files
+&gt;&gt;&gt; path = Path('/tmp') / 'logs'
+&gt;&gt;&gt; zip_last_n_files(path, 'log_files.zip', n=3)
+&gt;&gt;&gt; zip_out = Path('log_files.zip')
+&gt;&gt;&gt; ZipFile(zip_out).namelist()
+['file1_2019-10-31.log', 'file7_2019-10-30.log', 'file6_2019-10-30.log']
+</pre></p>
+
+<p>The order of the 3 files does not really matter, as long as you get the latest 3 (or whatever number <code>n</code> is).</p>
+
+<p>We hope you learn some good tricks coding this Bite. Maybe even a script / snippet you can use elsewhere! And remember keep calm and code in Python!</p>
