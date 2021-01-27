@@ -1,0 +1,13 @@
+<p>We love it when CLI or web apps take the extra mile to be more user friendly. In this Bite you will tweak the user experience of a function yourself.</p>
+
+<p>Have you noticed how Django's <code>migrate.py</code> helps you type in the right command?<pre>
+$ python manage.py migrat
+Unknown command: 'migrat'. Did you mean migrate?
+Type 'manage.py help' for usage.
+</pre></p>
+
+<p>Using Python's <code>difflib</code> this is actually not that hard to implement. Let's roll our own using another theme: file matching.</p>
+
+<p>Complete the <code>get_matching_files</code> function below. It takes a target directory <code>Path</code> object and filter_str <code>str</code> to match (case insensitive). If any files match exactly, return a <code>list</code> with matches. If there is no exact match, see if there are closely matching files and return those. If no closely matching files either, return an empty <code>list</code>.</p>
+
+<p>Good luck and keep calm and code more Python!</p>
