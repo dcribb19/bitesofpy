@@ -155,7 +155,7 @@ Here I will build my Pythonic portfolio coding with PyBites!
     [256](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/256)
 
 ## Modules
--bs4
+- bs4
     - [125](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/125)
 - collections
     - [4](https://github.com/dcribb19/bitesofpy/tree/master/code_challenges/4),
